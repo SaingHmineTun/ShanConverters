@@ -11,8 +11,13 @@ public class TaiglishConverterWordTest {
     @Test
     public void Test1() {
         // Test ဢႃ ၊ ဢီ ၊ ဢေ ၊ ဢႄ ၊ ဢူ ၊ ဢူဝ် ၊ ဢေႃ ၊ ဢိုဝ် ၊ ဢိူဝ်
-        assertEquals("z", taiToEng("ၸ"));
+        assertEquals("za", taiToEng("ၸ"));
+        assertEquals("kha", taiToEng(" ၶ"));
+        assertEquals("nga", taiToEng("င "));
+        assertEquals("kya", taiToEng("ၵျ"));
         assertEquals("paa", taiToEng("ပႃ"));
+        assertEquals("sraa", taiToEng("သြႃ"));
+        assertEquals("pyaa", taiToEng("ပျႃ"));
         assertEquals("waa", taiToEng("ဝႃ"));
         assertEquals("thi", taiToEng("ထီ"));
         assertEquals("ri", taiToEng("ရီ"));
@@ -21,6 +26,7 @@ public class TaiglishConverterWordTest {
         assertEquals("fu", taiToEng("ၾူ"));
         assertEquals("so", taiToEng("သူဝ်"));
         assertEquals("lau", taiToEng("လေႃ"));
+        assertEquals("kyau", taiToEng("ၵျေႃ"));
         assertEquals("lue", taiToEng("လိုဝ်"));
         assertEquals("yoe", taiToEng("ယိူဝ်"));
     }

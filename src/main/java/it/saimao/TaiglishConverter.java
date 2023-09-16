@@ -4,12 +4,34 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static it.saimao.ShanSyllableBreaker.syllable_break;
+
 public class TaiglishConverter {
     public static String taiToEng(String input) {
 
-        String output = input;
+        String output = syllable_break(input);
+//        String output = input;
 
-         // ၵႆ ပိၼ်ႇပဵၼ် ၵၺ်
+        // ၵ ၵျ တြ ႁႂ်ႈပဵတ် ka kya tra
+        if (output.length() == 1) {
+            output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022])", "$1a");
+        }
+        else if (output.length() == 2) {
+            if (input.contains("\u0020")) {
+                output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?", "$1$2$3a");
+                output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2a$3");
+            } else {
+                output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022])([\\u103b\\u103c])", "$1$2a");
+            }
+        } else {
+            // Without arrpot, arr yau, tang, tang sung, tit nin, tit sung, a sai, a tang, e sai, e tang, kwai, hwai, tay tay tin,
+            output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(?![\\u1062\\u1083\\u102d\\u102e\\u102f\\u1030\\u1031\\u1035\\u1084\\u1085\\u1082\\u103d\\u1036])", "$1$2$3a");
+            output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2a$3");
+            output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2$3a$4");
+        }
+
+
+        // ၵႆ ပိၼ်ႇပဵၼ် ၵၺ်
         output = output.replaceAll("\\u1086", "\u107a\u103a");
 
         // ဢပ် - ဢaပ်
@@ -67,10 +89,13 @@ public class TaiglishConverter {
         // h - ႁ
         output = output.replaceAll("\\u1081\\u103a?", "\u0068");
         // a - ဢ
-        // "{  \"from\": \"\\u1022\",  \"to\": \"\\u195f\" }," +
+        output = output.replaceAll("\\u1022", "");
+        // y - ျ
+        output = output.replaceAll("\\u103b", "y");
+        // r - ြ
+        output = output.replaceAll("\\u103c", "r");
 
         // End Tai Consonants
-
 
 
         // au - ဢေႃ ၊ ဢွ
@@ -94,7 +119,7 @@ public class TaiglishConverter {
         // w - ဢႂ
         output = output.replaceAll("\\u1082", "w");
 
-        return output;
+        return output.trim();
 
     }
 
