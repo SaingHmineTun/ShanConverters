@@ -6,7 +6,7 @@ import static it.saimao.TaiglishConverter.taiToEng;
 import static org.junit.Assert.*;
 
 
-public class TaiglishConverterTest {
+public class TaiglishConverterWordTest {
 
     @Test
     public void Test1() {
