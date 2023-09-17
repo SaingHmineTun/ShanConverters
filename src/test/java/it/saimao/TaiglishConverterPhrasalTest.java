@@ -63,53 +63,52 @@ public class TaiglishConverterPhrasalTest {
     public void Test2() {
         // ဢႆ ဢၢႆ ဢုၺ် ဢူၺ် ဢွႆ ဢိုၺ် ဢိူၺ်
         assertEquals("kǎi khǎai kǔi khǒi khǎui tǔei tǒei mǎue", taiToEng("ၵႆၶၢႆၵုၺ်ၶူၺ်ၶွႆတိုၺ်တိူၺ်မႂ်"));
-        assertEquals("kǎi kài māi tái sâi ha᷈i", taiToEng("ၵႆၵႆႇမႆႈတႆးသႆႉႁႆႊ"));
-        assertEquals("khǎai tsàai ngāai tsáai sâai la᷈ai", taiToEng("ၶၢႆၸၢႆႇငၢႆႈၸၢႆးသၢႆႉလၢႆႊ"));
-        assertEquals("tǔi tùi thūi lúi kûi ku᷈i", taiToEng("တုၺ်တုၺ်ႇထုၺ်ႈလုၺ်းၵုၺ်ႉၵုၺ်ႊ"));
-        assertEquals("mǒi tòi lōi tói thôi ko᷈i", taiToEng("မူၺ်တူၺ်ႇလူၺ်ႈတူၺ်းထူၺ်ႉၵူၺ်ႊ"));
-        assertEquals("khǎui sàui kāui táui sâui kha᷈ui", taiToEng("ၶွႆသွႆႇၵွႆႈတွႆးသွႆႉၶွႆႊ"));
-        assertEquals("kǔei khùei ngūei tsúei sûei tu᷈ei", taiToEng("ၵိုၺ်ၶိုၺ်ႇငိုၺ်ႈၸိုၺ်းသိုၺ်ႉတိုၺ်ႊ"));
-        assertEquals("tǒei thòei nōei póei phôei mo᷈ei", taiToEng("တိူၺ်ထိူၺ်ႇၼိူၺ်ႈပိူၺ်းၽိူၺ်ႉမိူၺ်ႊ"));
+        assertEquals("kǎi kài māi tái sâ\u0330i ha᷈i", taiToEng("ၵႆၵႆႇမႆႈတႆးသႆႉႁႆႊ"));
+        assertEquals("khǎai tsàai ngāai tsáai sâ\u0330ai la᷈ai", taiToEng("ၶၢႆၸၢႆႇငၢႆႈၸၢႆးသၢႆႉလၢႆႊ"));
+        assertEquals("tǔi tùi thūi lúi kû\u0330i ku᷈i", taiToEng("တုၺ်တုၺ်ႇထုၺ်ႈလုၺ်းၵုၺ်ႉၵုၺ်ႊ"));
+        assertEquals("mǒi tòi lōi tói thô\u0330i ko᷈i", taiToEng("မူၺ်တူၺ်ႇလူၺ်ႈတူၺ်းထူၺ်ႉၵူၺ်ႊ"));
+        assertEquals("khǎui sàui kāui táui sâ\u0330ui kha᷈ui", taiToEng("ၶွႆသွႆႇၵွႆႈတွႆးသွႆႉၶွႆႊ"));
+        assertEquals("kǔei khùei ngūei tsúei sû\u0330ei tu᷈ei", taiToEng("ၵိုၺ်ၶိုၺ်ႇငိုၺ်ႈၸိုၺ်းသိုၺ်ႉတိုၺ်ႊ"));
+        assertEquals("tǒei thòei nōei póei phô\u0330ei mo᷈ei", taiToEng("တိူၺ်ထိူၺ်ႇၼိူၺ်ႈပိူၺ်းၽိူၺ်ႉမိူၺ်ႊ"));
     }
 
     @Test
     public void Test3() {
         // ဢဝ် ဢၢဝ် ဢိဝ် ဢဵဝ် ဢႅဝ် ဢႂ်
         assertEquals("kǎo khǎao lǐo khǎeo lěao khǎue", taiToEng("ၵဝ်ၶၢဝ်လိဝ်ၶဵဝ်လႅဝ်ၶႂ်"));
-        assertEquals("kǎo khào tsāo sáo lâo ma᷈o", taiToEng("ၵဝ်ၶဝ်ႇၸဝ်ႈသဝ်းလဝ်ႉမဝ်ႊ"));
-        assertEquals("khǎao kàao pāao háao tâao sa᷈ao", taiToEng("ၶၢဝ်ၵၢဝ်ႇပၢဝ်ႈႁၢဝ်းတၢဝ်ႉသၢဝ်ႊ"));
-        assertEquals("sǐo lìo kīo khío lîo ti᷈o", taiToEng("သိဝ်လိဝ်ႇၵိဝ်ႈၶိဝ်းလိဝ်ႉတိဝ်ႊ"));
-        assertEquals("lǎeo pàeo kāeo máeo lâeo ka᷈eo", taiToEng("လဵဝ်ပဵဝ်ႇၵဵဝ်ႈမဵဝ်းလဵဝ်ႉၵဵဝ်ႊ"));
-        assertEquals("lěao kèao kēao léao khêao tse᷈ao", taiToEng("လႅဝ်ၵႅဝ်ႇၵႅဝ်ႈလႅဝ်းၶႅဝ်ႉၸႅဝ်ႊ"));
-        assertEquals("lǎue sàue kāue náue nâue la᷈ue", taiToEng("လႂ်သႂ်ႇၵႂ်ႈၼႂ်းၼႂ်ႉလႂ်ႊ"));
+        assertEquals("kǎo khào tsāo sáo lâ\u0330o ma᷈o", taiToEng("ၵဝ်ၶဝ်ႇၸဝ်ႈသဝ်းလဝ်ႉမဝ်ႊ"));
+        assertEquals("khǎao kàao pāao háao tâ\u0330ao sa᷈ao", taiToEng("ၶၢဝ်ၵၢဝ်ႇပၢဝ်ႈႁၢဝ်းတၢဝ်ႉသၢဝ်ႊ"));
+        assertEquals("sǐo lìo kīo khío lî\u0330o ti᷈o", taiToEng("သိဝ်လိဝ်ႇၵိဝ်ႈၶိဝ်းလိဝ်ႉတိဝ်ႊ"));
+        assertEquals("lǎeo pàeo kāeo máeo lâ\u0330eo ka᷈eo", taiToEng("လဵဝ်ပဵဝ်ႇၵဵဝ်ႈမဵဝ်းလဵဝ်ႉၵဵဝ်ႊ"));
+        assertEquals("lěao kèao kēao léao khê\u0330ao tse᷈ao", taiToEng("လႅဝ်ၵႅဝ်ႇၵႅဝ်ႈလႅဝ်းၶႅဝ်ႉၸႅဝ်ႊ"));
+        assertEquals("lǎue sàue kāue náue nâ\u0330ue la᷈ue", taiToEng("လႂ်သႂ်ႇၵႂ်ႈၼႂ်းၼႂ်ႉလႂ်ႊ"));
     }
 
     @Test
     public void Test4() {
         // တူဝ်ၽႅတ်းသဵင်လင် - ဢမ်, ဢၼ်, ဢင်
         assertEquals("khǎn kǎam lǐng khǎen kěm khǔn sǒn pǎung sǔeng lǒem", taiToEng("ၶၼ်ၵၢမ်လိင်ၶဵၼ်ၵႅမ်ၶုၼ်သူၼ်ပွင်သိုင်လိူမ်"));
-        assertEquals("khǎn kǎam lǐng khǎen kěm khǔn sǒn pǎung sǔeng lǒem", taiToEng("ၶၼ်ၵၢမ်လိင်ၶဵၼ်ၵႅမ်ၶုၼ်သူၼ်ပွင်သိုင်လိူမ်"));
-        assertEquals("kǎn khàng tsām tsáng nâm tha᷈ng", taiToEng("ၵၼ်ၶင်ႇၸမ်ႈၸင်းၼမ်ႉထင်ႊ"));
-        assertEquals("lǎan sàang khāang táang mâan tha᷈am", taiToEng("လၢၼ်သၢင်ႇၶၢင်ႈတၢင်းမၢၼ်ႉထၢမ်ႊ"));
-        assertEquals("lǐn sìm pīn khíng lîm ki᷈n", taiToEng("လိၼ်သိမ်ႇပိၼ်ႈၶိင်းလိမ်ႉၵိၼ်ႊ"));
-        assertEquals("khǎen làeng sāen káem lâeng pa᷈em", taiToEng("ၶဵၼ်လဵင်ႇသဵၼ်ႈၵဵမ်းလဵင်ႉပဵမ်ႊ"));
-        assertEquals("měn tsèng khēm léng têm te᷈ng", taiToEng("မႅၼ်ၸႅင်ႇၶႅမ်ႈလႅင်းတႅမ်ႉတႅင်ႊ"));
-        assertEquals("khǔn kùng tsūng tsúm khûn pu᷈n", taiToEng("ၶုၼ်ၵုင်ႇၸုင်ႈၸုမ်းၶုၼ်ႉပုၼ်ႊ"));
-        assertEquals("sǒn lòm khōng lóm kôn to᷈ng", taiToEng("သူၼ်လူမ်ႇၶူင်ႈလူမ်းၵူၼ်ႉတူင်ႊ"));
-        assertEquals("sǎun làun tsāung kyáung lâum tsa᷈um", taiToEng("သွၼ်လွၼ်ႇၸွင်ႈၵျွင်းလွမ်ႉၸွမ်ႊ"));
-        assertEquals("khǔeng tsùen tūen kúem thûeng tsu᷈eng", taiToEng("ၶိုင်ၸိုၼ်ႇတိုၼ်ႈၵိုမ်းထိုင်ႉၸိုင်ႊ"));
-        assertEquals("pǒen khòeng ngōem lóeng tsôeng kho᷈eng", taiToEng("ပိူၼ်ၶိူင်ႇငိူမ်ႈလိူင်းၸိူင်ႉၶိူင်ႊ"));
+        assertEquals("kǎn khàng tsām tsáng nâ\u0330m tha᷈ng", taiToEng("ၵၼ်ၶင်ႇၸမ်ႈၸင်းၼမ်ႉထင်ႊ"));
+        assertEquals("lǎan sàang khāang táang mâ\u0330an tha᷈am", taiToEng("လၢၼ်သၢင်ႇၶၢင်ႈတၢင်းမၢၼ်ႉထၢမ်ႊ"));
+        assertEquals("lǐn sìm pīn khíng lî\u0330m ki᷈n", taiToEng("လိၼ်သိမ်ႇပိၼ်ႈၶိင်းလိမ်ႉၵိၼ်ႊ"));
+        assertEquals("khǎen làeng sāen káem lâ\u0330eng pa᷈em", taiToEng("ၶဵၼ်လဵင်ႇသဵၼ်ႈၵဵမ်းလဵင်ႉပဵမ်ႊ"));
+        assertEquals("měn tsèng khēm léng tê\u0330m te᷈ng", taiToEng("မႅၼ်ၸႅင်ႇၶႅမ်ႈလႅင်းတႅမ်ႉတႅင်ႊ"));
+        assertEquals("khǔn kùng tsūng tsúm khû\u0330n pu᷈n", taiToEng("ၶုၼ်ၵုင်ႇၸုင်ႈၸုမ်းၶုၼ်ႉပုၼ်ႊ"));
+        assertEquals("sǒn lòm khōng lóm kô\u0330n to᷈ng", taiToEng("သူၼ်လူမ်ႇၶူင်ႈလူမ်းၵူၼ်ႉတူင်ႊ"));
+        assertEquals("sǎun làun tsāung kyáung lâ\u0330um tsa᷈um", taiToEng("သွၼ်လွၼ်ႇၸွင်ႈၵျွင်းလွမ်ႉၸွမ်ႊ"));
+        assertEquals("khǔeng tsùen tūen kúem thû\u0330eng tsu᷈eng", taiToEng("ၶိုင်ၸိုၼ်ႇတိုၼ်ႈၵိုမ်းထိုင်ႉၸိုင်ႊ"));
+        assertEquals("pǒen khòeng ngōem lóeng tsô\u0330eng kho᷈eng", taiToEng("ပိူၼ်ၶိူင်ႇငိူမ်ႈလိူင်းၸိူင်ႉၶိူင်ႊ"));
     }
 
     @Test
     public void Test5() {
         // တူဝ်ၽႅတ်းသဵင်ၶၢတ်ႇ - ဢၵ်, ဢပ်, ဢတ်
         assertEquals("khǎt lǎat lǐk lǎep lěp lǔk tǒt pǎuk khǔet kǒet", taiToEng("ၶတ်လၢတ်လိၵ်လဵပ်လႅပ်လုၵ်တူတ်ပွၵ်ၶိုတ်ၵိူတ်"));
-        assertEquals("khǎt tsàk sāt sáp lâp ta᷈k", taiToEng("ၶတ်ၸၵ်ႇသတ်ႈသပ်းလပ်ႉတၵ်ႊ"));
-        assertEquals("khǎat làap lāat máak sâak tha᷈at", taiToEng("ၶၢတ်လၢပ်ႇလၢတ်ႈမၢၵ်းသၢၵ်ႉထၢတ်ႊ"));
-        assertEquals("pǐk tàet māet lâek lép khe᷈k", taiToEng("ပိၵ်တဵတ်ႇမဵတ်ႈလဵၵ်ႉလႅပ်းၶႅၵ်ႊ"));
-        assertEquals("tsǔp thùk nōt káup lôt ta᷈up", taiToEng("ၸုပ်ထုၵ်ႇၼူတ်ႈၵွပ်းလူတ်ႉတွပ်ႊ"));
-        assertEquals("lǒet sùep thōek kúek khûek ko᷈et", taiToEng("လိူတ်သိုပ်ႇထိူၵ်ႈၵိုၵ်းၶိုၵ်ႉၵိူတ်ႊ"));
+        assertEquals("khǎt tsàk sāt sáp lâ\u0330p ta᷈k", taiToEng("ၶတ်ၸၵ်ႇသတ်ႈသပ်းလပ်ႉတၵ်ႊ"));
+        assertEquals("khǎat làap lāat máak sâ\u0330ak tha᷈at", taiToEng("ၶၢတ်လၢပ်ႇလၢတ်ႈမၢၵ်းသၢၵ်ႉထၢတ်ႊ"));
+        assertEquals("pǐk tàet māet lâ\u0330ek lép khe᷈k", taiToEng("ပိၵ်တဵတ်ႇမဵတ်ႈလဵၵ်ႉလႅပ်းၶႅၵ်ႊ"));
+        assertEquals("tsǔp thùk nōt káup lô\u0330t ta᷈up", taiToEng("ၸုပ်ထုၵ်ႇၼူတ်ႈၵွပ်းလူတ်ႉတွပ်ႊ"));
+        assertEquals("lǒet sùep thōek kúek khû\u0330ek ko᷈et", taiToEng("လိူတ်သိုပ်ႇထိူၵ်ႈၵိုၵ်းၶိုၵ်ႉၵိူတ်ႊ"));
     }
 
 

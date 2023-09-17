@@ -15,6 +15,7 @@ public class TaiglishConverterWordTest {
         assertEquals("kha", taiToEng(" ၶ"));
         assertEquals("nga", taiToEng("င "));
         assertEquals("kya", taiToEng("ၵျ"));
+        assertEquals("khya", taiToEng("ၶျ"));
         assertEquals("kra", taiToEng("ၵြ"));
         assertEquals("pa\u030ca", taiToEng("ပႃ"));
         assertEquals("pa\u0301a", taiToEng("ပႃး"));
@@ -22,9 +23,9 @@ public class TaiglishConverterWordTest {
         assertEquals("sra\u030ca", taiToEng("သြႃ"));
         assertEquals("pya\u030ca", taiToEng("ပျႃ"));
         assertEquals("wa\u030ca", taiToEng("ဝႃ"));
-        assertEquals("thi\u030c", taiToEng("ထီ"));
-        assertEquals("thi\u0301", taiToEng("ထီး"));
-        assertEquals("ri\u030c", taiToEng("ရီ"));
+        assertEquals("thi\u030ci", taiToEng("ထီ"));
+        assertEquals("thi\u0301i", taiToEng("ထီး"));
+        assertEquals("ri\u030ci", taiToEng("ရီ"));
         assertEquals("ha\u030ce", taiToEng("ႁေ"));
         assertEquals("ha\u0301e", taiToEng("ႁေး"));
         assertEquals("me\u030c", taiToEng("မႄ"));

@@ -10,25 +10,13 @@ public class TaiglishConverter {
     public static String taiToEng(String input) {
 
         String output = syllable_break(input);
-//        String output = input;
+        // "ၵ" "ၵျ" "တြ" ႁႂ်ႈပဵတ် ka kya tra
+        output = output.replaceAll("^([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022])([\\u103b\\u103c])?$", "$1$2a");
 
-        // ၵ ၵျ တြ ႁႂ်ႈပဵတ် ka kya tra
-        if (output.length() == 1) {
-            output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022])", "$1a");
-        }
-        else if (output.length() == 2) {
-            if (input.contains("\u0020")) {
-                output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?", "$1$2$3a");
-                output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2a$3");
-            } else {
-                output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022])([\\u103b\\u103c])", "$1$2a");
-            }
-        } else {
-            // Without arrpot, arr yau, tang, tang sung, tit nin, tit sung, a sai, a tang, e sai, e tang, kwai, hwai, tay tay tin,
-            output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(?![\\u1062\\u1083\\u102d\\u102e\\u102f\\u1030\\u1031\\u1035\\u1084\\u1085\\u1082\\u103d\\u1036\\u1086\\u101d\\u107a\\u1075\\u1010\\u1015\\u1004\\u1019\\u107c\\u103b\\u103c])", "$1$2$3a");
-            output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2a$3");
-            output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2$3a$4");
-        }
+        // Without arrpot, arr yau, tang, tang sung, tit nin, tit sung, a sai, a tang, e sai, e tang, kwai, hwai, tay tay tin,
+        output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(?![\\u1062\\u1083\\u102d\\u102e\\u102f\\u1030\\u1031\\u1035\\u1084\\u1085\\u1082\\u103d\\u1036\\u1086\\u101d\\u107a\\u1075\\u1010\\u1015\\u1004\\u1019\\u107c\\u103b\\u103c])", "$1$2$3a");
+        output = output.replaceAll("([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2a$3");
+        output = output.replaceAll("(\\u0020)([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022\\u103b\\u103c])([\\u103b\\u103c])?(\\u0020)", "$1$2$3a$4");
 
 
         // ၵႆ ပိၼ်ႇပဵၼ် ၵၺ်
