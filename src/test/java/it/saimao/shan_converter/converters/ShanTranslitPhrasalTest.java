@@ -1,12 +1,13 @@
-package it.saimao;
+package it.saimao.shan_converter.converters;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import static it.saimao.ShanSyllableBreaker.syllable_break;
-import static it.saimao.TaiglishConverter.taiToEng;
+import static it.saimao.shan_converter.breakers.ShanSyllableBreaker.syllable_break;
+import static it.saimao.shan_converter.converters.ShanTranslit.taiToEng;
 import static org.junit.Assert.assertEquals;
 
-public class TaiglishConverterPhrasalTest {
+public class ShanTranslitPhrasalTest {
     @Test
     public void Test_Major() {
         assertEquals("ka wāa kài kāup tài mâ̰i nǒe káun", taiToEng("ၵ ဝႃႈ ၵႆႇ ၵွပ်ႈတႆႇမႆႉၼိူဝ်ၵွၼ်း"));
@@ -51,7 +52,7 @@ public class TaiglishConverterPhrasalTest {
         assertEquals("sǐi mìi tīi tsíi thḭ̂i li᷈i", taiToEng("သီမီႇတီႈၸီးထီႉလီႊ"));
         assertEquals("tǎe sàe māe tsáe tâ̰e ha᷈e", taiToEng("တေသေႇမေႈၸေးတေႉႁေႊ"));
         assertEquals("tě lè mē mé pḛ̂ ke᷈", taiToEng("တႄလႄႇမႄႈမႄးပႄႉၵႄႊ"));
-        assertEquals("ၼူ လူႇ ၵူႈ မူး ၸူႉ တူႊ", syllable_break("ၼူလူႇၵူႈမူးၸူႉတူႊ"));
+        Assert.assertEquals("ၼူ လူႇ ၵူႈ မူး ၸူႉ တူႊ", syllable_break("ၼူလူႇၵူႈမူးၸူႉတူႊ"));
         assertEquals("nǔ lù kū mú tsṵ̂ tu᷈", taiToEng("ၼူလူႇၵူႈမူးၸူႉတူႊ"));
         assertEquals("khǒ thò kō só khô̰ mo᷈", taiToEng("ၶူဝ်ထူဝ်ႇၵူဝ်ႈသူဝ်းၶူဝ်ႉမူဝ်ႊ"));
         assertEquals("tǎu màu khāu láu sâ̰u ka᷈u", taiToEng("တေႃမေႃႇၶေႃႈလေႃးသေႃႉၵေႃႊ"));

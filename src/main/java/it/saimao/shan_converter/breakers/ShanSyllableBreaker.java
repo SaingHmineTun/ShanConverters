@@ -1,4 +1,4 @@
-package it.saimao;
+package it.saimao.shan_converter.breakers;
 
 public class ShanSyllableBreaker {
     public static String syllable_break(String input_text) {

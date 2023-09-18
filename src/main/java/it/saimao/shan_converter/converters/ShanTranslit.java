@@ -1,15 +1,12 @@
-package it.saimao;
+package it.saimao.shan_converter.converters;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import static it.saimao.ShanSyllableBreaker.syllable_break;
+import it.saimao.shan_converter.breakers.ShanSyllableBreaker;
 
-public class TaiglishConverter {
+public class ShanTranslit {
     public static String taiToEng(String input) {
 
-        String output = syllable_break(input);
+        String output = ShanSyllableBreaker.syllable_break(input);
         // "ၵ" "ၵျ" "တြ" ႁႂ်ႈပဵတ် ka kya tra
         output = output.replaceAll("^([\\u1075-\\u1081\\u1004\\u101e\\u1010\\u1011\\u1015\\u1019\\u101a\\u101b\\u101c\\u101d\\u1022])([\\u103b\\u103c])?$", "$1$2a");
 
@@ -130,6 +127,12 @@ public class TaiglishConverter {
         output = output.replaceAll("([khgzsytnpfmrlwaʼ])([aeiou])(\\u030c)([a-z]{0,3})\\u108a", "$1$2\u1dc8$4");
         // Convert - ʼa => a
         output = output.replaceAll("ʼa ", "a ");
+        output = output.replaceAll(" ʼa", " a");
+
+        // ။ -> .
+        output = output.replaceAll("\u104b", ".");
+        // ၊ -> ,
+        output = output.replaceAll("\u104a", ",");
 
         return output.trim();
 
