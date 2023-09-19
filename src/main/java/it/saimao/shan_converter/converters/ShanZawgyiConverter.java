@@ -63,7 +63,10 @@ public class ShanZawgyiConverter {
 
                 .replaceAll("\\u103a", "\u1039")
                 .replaceAll("\\u103b", "\u103a")
-                .replaceAll("\\u103c", "\u107e")
+                // တြ ၊ သြ ၊ ၽြ ၊
+                .replaceAll("\\u103c([\\u1010\\u1011\\u101e\\uaa05\\uaa15\\uaa17])", "\u107e$1")
+                // ၵြႃး ၊ မြႃး ၊ ၶြႃး ၊ ပြႃး ၊ မြႃး ၊
+                .replaceAll("\\u103c([\\uaa00\\uaa01\\uaa02\\uaa03\\u1015\\u1019\\u1004])", "\u103b$1")
                 .replaceAll("\\u103d", "\u103c")
                 .replaceAll("\\u103e", "\u103d")
 
@@ -72,19 +75,29 @@ public class ShanZawgyiConverter {
 
     static String zg2uni(String input) {
         return input
+                // ြတ ၊ ြၽ - တြ ၊ ၽြ
                 .replaceAll("\\u103c", "\u103d")
+                .replaceAll("([\\u107e\\u103b])([\\u1000-\\u1022\\uaa00-\\uaa21])", "$2\u103c")
+                .replaceAll("\\u103a", "\u103b")
                 .replaceAll("\\u1039", "\u103a")
-                .replaceAll("(\\u1094|\\u1095)", "\u1037")
+                .replaceAll("([\\u1094\\u1095])", "\u1037")
                 .replaceAll("\\u1031\\u1047", "\u1031\u101b")
                 .replaceAll("\\u1040(\\u102e|\\u102f|\\u102d\\u102f|\\u1030|\\u1036|\\u103d|\\u103e)", "\u101d$1")
-                .replaceAll("\\u1031([\\u1000-\\u1022\\uaa00-\\uaa21])", "$1\u1031")
-                .replaceAll("\\uaa2c([\\u1000-\\u1022\\uaa00-\\uaa21])", "$1\uaa2c")
-                .replaceAll("([\\u102d\\u102e])\\u103b", "\u103b$1")
-                .replaceAll("(\\u102f|\\u1030)(\\u102d|\\u102e)", "$2$1")
-                .replaceAll("[\\u102d]+", "\u102d")
-                .replaceAll("[\\u103a]+", "\u103a")
-                .replaceAll("[\\u102e]+", "\u102e")
+                .replaceAll("(\\u1031)([\\u1000-\\u1022\\uaa00-\\uaa21])(\\u103b)", "$2$3$1")
+                .replaceAll("(\\u1031)([\\u1000-\\u1022\\uaa00-\\uaa21])", "$2$1")
+                .replaceAll("(\\uaa2c)([\\u1000-\\u1022\\uaa00-\\uaa21])", "$2$1")
+                // ( ိ ၊ ီ ) + ြ   = ြ  + ( ိ ၊ ီ )
+                .replaceAll("([\\u102d\\u102e])(\\u103b)", "$2$1")
+                .replaceAll("([\\u102f\\u1030])([\\u102d\\u102e])", "$2$1")
+                .replaceAll("\\u102d+", "\u102d")
+                .replaceAll("\\u103a+", "\u103a")
+                .replaceAll("\\u102e+", "\u102e")
                 .replaceAll("\\u102f\\u102d", "\u102d\u102f")
+
+
+                // ၵြႃး ၊ မြႃး ၊ ၶြႃး ၊ ပြႃး ၊ မြႃး ၊
+//                .replaceAll("\\u103c([\\uaa00\\uaa01\\uaa02\\uaa03\\u1015\\u1019\\u1004])", "\u103b$1")
+
                 .replaceAll("\\uaa00", "\u1075")
                 .replaceAll("\\uaa01", "\u1076")
                 .replaceAll("\\uaa05", "\u1078")
