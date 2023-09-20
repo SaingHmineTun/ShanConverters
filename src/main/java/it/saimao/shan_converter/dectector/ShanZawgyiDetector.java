@@ -9,7 +9,7 @@ public class ShanZawgyiDetector {
     }
 
     /*
-    Not perfect
+    Not perfect yet
     I just check if any of the shan characters are included in a string, let's say it is SHAN.
     So if you check it using words that are not included Shan specific characters (လီမီမီးယူတီ), it would definitely fail!
      */
