@@ -126,6 +126,7 @@ public class ShanTranslit {
         // ယၵ်းၶိုၼ်ႈ
         output = output.replaceAll("([khgzsytnpfmrlwaʼ])([aeiou])(\\u030c)([a-z]{0,3})\\u108a", "$1$2\u1dc8$4");
         // Convert - ʼa => a
+        // TODO : Error when deleted -> ဢ ။ ERROR WHEN NOT DELETED -> ၸ
         output = output.replaceAll("ʼa ", "a ");
         output = output.replaceAll(" ʼa", " a");
 
@@ -151,9 +152,9 @@ public class ShanTranslit {
 
 
         // r - တြ
-        output = output.replaceAll("(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)r", "$1\u103c");
+        output = output.replaceAll("(k|kh|ng|ts|s|t|th|p|ph|f|m|y|r|l|w|h)r", "$1\u103c");
         // y - ပျ
-        output = output.replaceAll("(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)y", "$1\u103b");
+        output = output.replaceAll("(k|kh|ng|ts|s|t|th|p|ph|f|m|y|r|l|w|h)y", "$1\u103b");
 
         // \u030c , \u0300 , \u0304 , \u0301 , \u0302\u0330 , \u1dc8
         // ဢႃ
@@ -168,26 +169,26 @@ public class ShanTranslit {
         // ဢေ
         output = output.replaceAll("a(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)e", "$1\u1031");
         // ဢိုၼ်
-        output = output.replaceAll("u(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)e(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)", "$1ို$2");
+        output = output.replaceAll("u(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)e(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|i|ʼ)", "$1ို$2");
 
         // ဢိုဝ်
         output = output.replaceAll("u(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)e", "$1ိုဝ");
 
         // ဢုၼ်
-        output = output.replaceAll("u(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)", "$1ု$2");
+        output = output.replaceAll("u(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|i|ʼ)", "$1ု$2");
         // ဢူ
         output = output.replaceAll("u(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)", "$1\u1030");
         // ဢိူၼ်
-        output = output.replaceAll("o(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)e(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)", "$1ိူ$2");
+        output = output.replaceAll("o(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)e(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|i|ʼ)", "$1ိူ$2");
 
         // ဢိူဝ်
         output = output.replaceAll("o(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)e", "$1ိူဝ");
         // ဢူၼ်
-        output = output.replaceAll("o(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)", "$1ူ$2");
+        output = output.replaceAll("o(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|i|ʼ)", "$1ူ$2");
         // ဢူဝ်
         output = output.replaceAll("o(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)", "$1ူဝ");
         // ဢွမ်
-        output = output.replaceAll("a(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)u(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)", "$1\u103d$2");
+        output = output.replaceAll("a(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)u(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|i|ʼ)", "$1\u103d$2");
 
         // ဢႂ်
         output = output.replaceAll("a(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)ue", "$1ႂ်");
@@ -203,7 +204,7 @@ public class ShanTranslit {
         // th - ထ
         output = output.replaceAll("th", "ထ");
         // ny - ၺ
-        output = output.replaceAll("ny", "ၺ");
+        output = output.replaceAll("ny|i", "ၺ");
         // ts - ၸ
         output = output.replaceAll("ts", "ၸ");
         // ph - ၽ
@@ -234,41 +235,42 @@ public class ShanTranslit {
         // output = output.replaceAll("\\u1085\\u101d\\u103a", "e\u030cao");
         // ဝ - ဝ်
         // output = output.replaceAll("\\u101d\\u103a", "o");
-        // w - ဝ
-        output = output.replaceAll("w|o", "ဝ");
         // h - ႁ
         output = output.replaceAll("h", "ႁ");
-        // r - ြ
-        // output = output.replaceAll("\\u103c", "r");
-        //
-        // output = output.replaceAll("\\u1036", "a\u030cm");
 
         // aa -> ဢႃ
         // ‘ - ဢ
         output = output.replaceAll("ʼ", "ဢ");
 
+        // kwam -> ၵႂမ်
+        output = output.replaceAll("([က-အၵ-ႁဢ])w", "$1\u1082");
+        // wam -> ဝမ်
+        output = output.replaceAll("w|o", "ဝ");
+
         //
         // \u030c , \u0300 , \u0304 , \u0301 , \u0302\u0330 , \u1dc8
-        output = output.replaceAll("(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)(ႃ|ီ|ိ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ိ[\\u102f\\u1030]?)?([က-အၵ-ႁဢ])", "$1$2$3\u103a");
-
-        // ပဝ်ႇ
-        output = output.replaceAll("(\\u030c)(ႃ|ီ|ႄ|ေႃ|ေ|ူ|ု|ွ|ိ[\\u102f\\u1030]?)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3");
-        // ယၵ်း
-        output = output.replaceAll("(\\u0300)(ႃ|ီ|ႄ|ေႃ|ေ|ူ|ု|ွ|ိ[\\u102f\\u1030]?)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u1087");
-        // ယၵ်းၸမ်ႈ
-        output = output.replaceAll("(\\u0304)(ႃ|ီ|ႄ|ေႃ|ေ|ူ|ု|ွ|ိ[\\u102f\\u1030]?)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u1088");
-        // ၸမ်ႈၼႃႈ
-        output = output.replaceAll("(\\u0301)(ႃ|ီ|ႄ|ေႃ|ေ|ူ|ု|ွ|ိ[\\u102f\\u1030]?)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u1038");
-        // ၸမ်ႈတႂ်ႈူ
-        output = output.replaceAll("(\\u0302\\u0330)(ႃ|ီ|ႄ|ေႃ|ေ|ူ|ု|ွ|ိ[\\u102f\\u1030]?)?([က-အၵ-ႁဢႂ])?", "$2$3\u1089");
-        // ယၵ်းၶိုၼ်ႈ
-        output = output.replaceAll("(\\u1dc8)(ႃ|ီ|ႄ|ေႃ|ေ|ူ|ု|ွ|ိ[\\u102f\\u1030]?)?([က-အၵ-ႁဢႂ])?", "$2$3\u108a");
+        output = output.replaceAll("(\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8)(ႃ|ီ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ို|ိူ|ိ)?([က-အၵ-ႁဢ])", "$1$2$3\u103a");
 
         // FINAL : Replace a with blank
+        output = output.replaceAll("a", "");
+        // ပဝ်ႇ
+        output = output.replaceAll("(\\u030c)(ႃ|ီ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ို|ိူ|ိ)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3");
+        // ယၵ်း
+        output = output.replaceAll("(\\u0300)(ႃ|ီ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ို|ိူ|ိ)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u1087");
+        // ယၵ်းၸမ်ႈ
+        output = output.replaceAll("(\\u0304)(ႃ|ီ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ို|ိူ|ိ)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u1088");
+        // ၸမ်ႈၼႃႈ
+        output = output.replaceAll("(\\u0301)(ႃ|ီ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ို|ိူ|ိ)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u1038");
+        // ၸမ်ႈတႂ်ႈ
+        output = output.replaceAll("(\\u0302\\u0330)(ႃ|ီ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ို|ိူ|ိ)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u1089");
+        // ယၵ်းၶိုၼ်ႈ
+        output = output.replaceAll("(\\u1dc8)(ႃ|ီ|ႄ|ႅ|ေႃ|ေ|ူ|ု|ွ|ို|ိူ|ိ)?([က-အၵ-ႁဢႂ]\\u103a)?", "$2$3\u108a");
+
         output = output.replaceAll("ႃ([က-အၵ-ႁဢ])်", "ၢ$1်");
         output = output.replaceAll("ေ([က-အၵ-ႁဢ])်", "ဵ$1်");
         output = output.replaceAll("ႄ([က-အၵ-ႁဢ])်", "ႅ$1်");
-        output = output.replaceAll("a", "");
+        // ၶၺ် ၊ ၶၢၺ် ၊ ၵႂၢၺ် -> ၶႆ ၊ ၶၢႆ ၊ ၵႂၢႆ
+        output = output.replaceAll("([က-အၵ-ႁဢ])(\\u1082)?([\\u1062\\u103d])?ၺ်", "$1$2$3\u1086");
 
         return output;
     }
