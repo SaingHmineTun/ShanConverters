@@ -187,5 +187,11 @@ public class ShanTranslitPhrasalTest {
         assertEquals("လိူတ် သိုပ်ႇ ထိူၵ်ႈ ၵိုၵ်း ၶိုၵ်ႉ ၵိူတ်ႊ", engToTai("lǒet sùep thōek kúek khû\u0330ek ko᷈et"));
     }
 
+    // SHAN -> ENGLISH without TONES
+    @Test
+    public void Test6ste() {
+
+    }
+
 
 }
