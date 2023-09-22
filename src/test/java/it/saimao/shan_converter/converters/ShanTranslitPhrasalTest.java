@@ -15,7 +15,7 @@ public class ShanTranslitPhrasalTest {
         assertEquals("kha wāa khài mē mán pài máa ngáum", taiToEng("ၶ ဝႃႈ ၶႆႇ မႄႈမၼ်းပႆႇမႃးငွမ်း"));
         assertEquals("nga wāa ngú lōen máa tsú tǒ khàet", taiToEng("င ဝႃႈ ငူး လိူၼ်ႈမႃးၸူးတူဝ်ၶဵတ်ႇ"));
         // a
-        assertEquals("tsa wāa tsâ̰ang pǎi ʼô̰ng ʼâ̰ang tsáum táang", taiToEng("ၸ ဝႃႈ ၸၢင်ႉ ပႆဢူင်ႉဢၢင်ႉၸွမ်းတၢင်း"));
+        assertEquals("tsa wāa tsâ̰ang pǎi ʼô̰ng ʼâ̰ang tsáum táang. tsa wāa tsâ̰ang pǎi ʼô̰ng ʼâ̰ang tsáum táang.", taiToEng("ၸ ဝႃႈ ၸၢင်ႉ ပႆဢူင်ႉဢၢင်ႉၸွမ်းတၢင်း။ ၸ ဝႃႈ ၸၢင်ႉ ပႆဢူင်ႉဢၢင်ႉၸွမ်းတၢင်း။"));
         // mii & mi
         assertEquals("sa wāa sǒe míi yù nǒe làa hâ̰a", taiToEng("သ ဝႃႈ သိူဝ် မီးယူႇၼိူဝ်လႃႇႁႃႉ"));
         assertEquals("nya wāa nyáung sǎeng kǎung máung pán tsàut", taiToEng("ၺ ဝႃႈ ၺွင်း သဵင်ၵွင်မွင်းပၼ်းၸွတ်ႇ"));

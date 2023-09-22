@@ -127,8 +127,8 @@ public class ShanTranslit {
         output = output.replaceAll("([khgzsytnpfmrlwaʼ])([aeiou])(\\u030c)([a-z]{0,3})\\u108a", "$1$2\u1dc8$4");
         // Convert - ʼa => a
         // TODO : Error when deleted -> ဢ ။ ERROR WHEN NOT DELETED -> ၸ
-        output = output.replaceAll("ʼa ", "a ");
-        output = output.replaceAll(" ʼa", " a");
+//        output = output.replaceAll("ʼa[]", "a ");
+        output = output.replaceAll("([ .?,!])?ʼa([ .?,!])", "$1a$2");
 
         // ။ -> .
         output = output.replaceAll("\u104b", ".");
