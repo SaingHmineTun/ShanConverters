@@ -4,8 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static it.saimao.shan_converter.breakers.ShanSyllableBreaker.syllable_break;
-import static it.saimao.shan_converter.converters.ShanTranslit.engToTai;
-import static it.saimao.shan_converter.converters.ShanTranslit.taiToEng;
+import static it.saimao.shan_converter.converters.ShanTranslit.*;
 import static org.junit.Assert.assertEquals;
 
 public class ShanTranslitPhrasalTest {
@@ -190,7 +189,7 @@ public class ShanTranslitPhrasalTest {
     // SHAN -> ENGLISH without TONES
     @Test
     public void Test6ste() {
-
+        assertEquals("pau khaue kya khen kwaa tsueng tae lai haung sraa lii raen hu saun phuek nyaa moe faa paang tsaai saang le ying ʼoei pae nuek soe kyau tuek thaa tsam le tang kai nan saa. tsaai maun kham song maa pan pan ka ran nai khao taang tue taa haet faun tai , Converter tai tae tae.", taiToEngWithoutTone("ပေႃးၶႂ်ႈၵျၶႅၼ်ႇၵႂႃႇၸိုင် တေလႆႈႁွင်ႉသြႃႇလီရဵၼ်းႁူႉသွၼ်ၽိုၵ်း ၺႃးမိူဝ်ႈၾႃႉပၢင်ႇ ၸၢႆးသၢင်ႇလႄႈ ယိင်းဢိူၺ်ႉပေၼိုၵ်း သိူဝ်းၵျေႃႇတိုၵ်းထႃႈ ၸံလႄႈတင်းၵႆၼၼ်ႉသႃႊ။ ၸၢႆးမွၼ်းၶမ်း သူင်ႇမႃးပၼ် ပၼ်ၵရၼ်ႇၼႆႉ ၶဝ်ႈတၢင်းတိုဝ်း တႃႇႁဵတ်ႉ ၾွၼ်ႉတႆး ၊ Converter တႆးတေႉတေႉ။"));
     }
 
 
