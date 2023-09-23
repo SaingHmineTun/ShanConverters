@@ -128,7 +128,6 @@ public class ShanTranslit {
         // ယၵ်းၶိုၼ်ႈ
         output = output.replaceAll("([khgzsytnpfmrlwaʼ])([aeiou])(\\u030c)([a-z]{0,3})\\u108a", "$1$2\u1dc8$4");
         // Convert - ʼa => a
-        // TODO : Error when deleted -> ဢ ။ ERROR WHEN NOT DELETED -> ၸ
 //        output = output.replaceAll("ʼa[]", "a ");
         output = output.replaceAll("([ .?,!])?ʼa([ .?,!])", "$1a$2");
 
@@ -264,7 +263,6 @@ public class ShanTranslit {
         // ပဝ်ႇ
         output = output.replaceAll("\\u030c", "");
         // Convert - ʼa => a
-        // TODO : Error when deleted -> ဢ ။ ERROR WHEN NOT DELETED -> ၸ
 //        output = output.replaceAll("ʼa[]", "a ");
         output = output.replaceAll("([ .?,!])?ʼa([ .?,!])", "$1a$2");
 
@@ -284,7 +282,6 @@ public class ShanTranslit {
         if (Pattern.matches(checkIsToneMarkIncludingOrNot, input)) {
             output = output.replaceAll("(k|kh|ng|ts|z|j|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)([aeiou])", "$1$2\u030c");
         }
-
         // y - ပျ
         output = output.replaceAll("^(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)y(a)$", "$1\u103b");
         // r - တြ
@@ -292,7 +289,6 @@ public class ShanTranslit {
         // a - ဢ
         output = output.replaceAll("^a$", "ʼ");
         output = output.replaceAll("^(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)?a$", "$1");
-
 
         // r - တြ
         output = output.replaceAll("(k|kh|ng|ts|s|t|th|p|ph|f|m|y|r|l|w|h)r", "$1\u103c");
