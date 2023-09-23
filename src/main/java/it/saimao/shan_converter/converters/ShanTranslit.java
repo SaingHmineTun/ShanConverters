@@ -3,6 +3,8 @@ package it.saimao.shan_converter.converters;
 
 import it.saimao.shan_converter.breakers.ShanSyllableBreaker;
 
+import java.util.regex.Pattern;
+
 public class ShanTranslit {
     public static String taiToEng(String input) {
 
@@ -276,7 +278,14 @@ public class ShanTranslit {
     }
 
     public static String engToTai(String input) {
-        String output = input;
+        String output = input.toLowerCase();
+
+        String checkIsToneMarkIncludingOrNot = "(?!.*(?:\\u030c|\\u0300|\\u0304|\\u0301|\\u0302\\u0330|\\u1dc8))[\\s\\S]*";
+        System.out.println(Pattern.matches(checkIsToneMarkIncludingOrNot, input));
+        if (Pattern.matches(checkIsToneMarkIncludingOrNot, input)) {
+            output = output.replaceAll("(k|kh|ng|ts|z|j|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)([aeiou])", "$1$2\u030c");
+            System.out.println(output);
+        }
 
         // y - ပျ
         output = output.replaceAll("^(k|kh|ng|ts|s|ny|t|th|n|p|ph|f|m|y|r|l|w|h|ʼ)y(a)$", "$1\u103b");
@@ -342,7 +351,7 @@ public class ShanTranslit {
         // ny - ၺ
         output = output.replaceAll("ny|i", "ၺ");
         // ts - ၸ
-        output = output.replaceAll("ts", "ၸ");
+        output = output.replaceAll("ts|j|z", "ၸ");
         // ph - ၽ
         output = output.replaceAll("ph", "ၽ");
         // k - ၵ
@@ -407,6 +416,13 @@ public class ShanTranslit {
         output = output.replaceAll("ႄ([က-အၵ-ႁဢ])်", "ႅ$1်");
         // ၶၺ် ၊ ၶၢၺ် ၊ ၵႂၢၺ် -> ၶႆ ၊ ၶၢႆ ၊ ၵႂၢႆ
         output = output.replaceAll("([က-အၵ-ႁဢ])(\\u1082)?([\\u1062\\u103d])?ၺ်", "$1$2$3\u1086");
+
+        // full stop, comma, question mark
+
+        // ။ -> .
+        output = output.replaceAll("\\.", "\u104b");
+        // ၊ -> ,
+        output = output.replaceAll(",", "\u104a");
 
         return output;
     }

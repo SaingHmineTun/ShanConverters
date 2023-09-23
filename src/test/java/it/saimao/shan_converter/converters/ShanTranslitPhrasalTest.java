@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class ShanTranslitPhrasalTest {
     @Test
     public void Test_Major() {
-        assertEquals("ka wāa kài kāup tài mâ̰i nǒe káun", taiToEng("ၵ ဝႃႈ ၵႆႇ ၵွပ်ႈတႆႇမႆႉၼိူဝ်ၵွၼ်း"));
+        assertEquals("ka wāa kài kāup tài mâ̰i nǒe káun.", taiToEng("ၵ ဝႃႈ ၵႆႇ ၵွပ်ႈတႆႇမႆႉၼိူဝ်ၵွၼ်း။"));
         assertEquals("kha wāa khài mē mán pài máa ngáum", taiToEng("ၶ ဝႃႈ ၶႆႇ မႄႈမၼ်းပႆႇမႃးငွမ်း"));
         assertEquals("nga wāa ngú lōen máa tsú tǒ khàet", taiToEng("င ဝႃႈ ငူး လိူၼ်ႈမႃးၸူးတူဝ်ၶဵတ်ႇ"));
         // a
@@ -54,8 +54,8 @@ public class ShanTranslitPhrasalTest {
     @Test
     public void Test1() {
         // ဢ ဢႃ ဢီ ဢေ ဢႄ ဢူ ဢူဝ် ဢေႃ ဢိုဝ် ဢိူဝ်
-        assertEquals("ka khǎa khǐi ngǎe tsě sǔ tǒ thǎu lǔe hǒe", taiToEng("ၵၶႃၶီငေၸႄသူတူဝ်ထေႃလိုဝ်ႁိူဝ်"));
-        assertEquals("pǎa sàa thāa náa mâ̰a sa᷈a", taiToEng("ပႃသႃႇထႃႈၼႃးမႃႉသႃႊ"));
+        assertEquals("ka khǎa khǐi ngǎe tsě sǔ tǒ thǎu lǔe hǒe.", taiToEng("ၵၶႃၶီငေၸႄသူတူဝ်ထေႃလိုဝ်ႁိူဝ်။"));
+        assertEquals("pǎa sàa thāa náa mâ̰a sa᷈a,", taiToEng("ပႃသႃႇထႃႈၼႃးမႃႉသႃႊ၊"));
         assertEquals("sǐi mìi tīi tsíi thḭ̂i li᷈i", taiToEng("သီမီႇတီႈၸီးထီႉလီႊ"));
         assertEquals("tǎe sàe māe tsáe tâ̰e ha᷈e", taiToEng("တေသေႇမေႈၸေးတေႉႁေႊ"));
         assertEquals("tě lè mē mé pḛ̂ ke᷈", taiToEng("တႄလႄႇမႄႈမႄးပႄႉၵႄႊ"));
@@ -70,8 +70,8 @@ public class ShanTranslitPhrasalTest {
     @Test
     public void Test1ett() {
         // ဢ ဢႃ ဢီ ဢေ ဢႄ ဢူ ဢူဝ် ဢေႃ ဢိုဝ် ဢိူဝ်
-        assertEquals("ၵ ၶႃ ၶီ ငေ ၸႄ သူ တူဝ် ထေႃ လိုဝ် ႁိူဝ်", engToTai("ka khǎa khǐi ngǎe tsě sǔ tǒ thǎu lǔe hǒe"));
-        assertEquals("ပႃ သႃႇ ထႃႈ ၼႃး မႃႉ သႃႊ", engToTai("pǎa sàa thāa náa mâ̰a sa᷈a"));
+        assertEquals("ၵ ၶႃ ၶီ ငေ ၸႄ သူ တူဝ် ထေႃ လိုဝ် ႁိူဝ်။", engToTai("ka khǎa khǐi ngǎe tsě sǔ tǒ thǎu lǔe hǒe."));
+        assertEquals("ပႃ သႃႇ ထႃႈ ၼႃး မႃႉ သႃႊ၊", engToTai("pǎa sàa thāa náa mâ̰a sa᷈a,"));
         assertEquals("သီ မီႇ တီႈ ၸီး ထီႉ လီႊ", engToTai("sǐi mìi tīi tsíi thḭ̂i li᷈i"));
         assertEquals("တေ သေႇ မေႈ ၸေး တေႉ ႁေႊ", engToTai("tǎe sàe māe tsáe tâ̰e ha᷈e"));
         assertEquals("တႄ လႄႇ မႄႈ မႄး ပႄႉ ၵႄႊ", engToTai("tě lè mē mé pḛ̂ ke᷈"));
@@ -188,8 +188,18 @@ public class ShanTranslitPhrasalTest {
 
     // SHAN -> ENGLISH without TONES
     @Test
-    public void Test6ste() {
+    public void Test6ste_TaiToEngWithoutToneMark() {
         assertEquals("pau khaue kya khen kwaa tsueng tae lai haung sraa lii raen hu saun phuek nyaa moe faa paang tsaai saang le ying ʼoei pae nuek soe kyau tuek thaa tsam le tang kai nan saa. tsaai maun kham song maa pan pan ka ran nai khao taang tue taa haet faun tai , Converter tai tae tae.", taiToEngWithoutTone("ပေႃးၶႂ်ႈၵျၶႅၼ်ႇၵႂႃႇၸိုင် တေလႆႈႁွင်ႉသြႃႇလီရဵၼ်းႁူႉသွၼ်ၽိုၵ်း ၺႃးမိူဝ်ႈၾႃႉပၢင်ႇ ၸၢႆးသၢင်ႇလႄႈ ယိင်းဢိူၺ်ႉပေၼိုၵ်း သိူဝ်းၵျေႃႇတိုၵ်းထႃႈ ၸံလႄႈတင်းၵႆၼၼ်ႉသႃႊ။ ၸၢႆးမွၼ်းၶမ်း သူင်ႇမႃးပၼ် ပၼ်ၵရၼ်ႇၼႆႉ ၶဝ်ႈတၢင်းတိုဝ်း တႃႇႁဵတ်ႉ ၾွၼ်ႉတႆး ၊ Converter တႆးတေႉတေႉ။"));
+    }
+
+    @Test
+    public void Test7_ets_EngWithoutToneMark_ToShan() {
+        assertEquals("ၵ ၶႃ ၶီ ငေ ၸႄ သူ တူဝ် ထေႃ လိုဝ် ႁိူဝ်", engToTai("ka khaa khii ngae tse su to thau lue hoe"));
+        assertEquals("ၵႆ ၶၢႆ ၵုၺ် ၶူၺ် ၶွႆ တိုၺ် တိူၺ် မႂ်", engToTai("kai khaai kui khoi khaui tuei toei maue"));
+        assertEquals("ၵဝ် ၶၢဝ် လိဝ် ၶဵဝ် လႅဝ် ၶႂ်", engToTai("kao khaao lio khaeo leao khaue"));
+        assertEquals("ၶၼ် ၵၢမ် လိင် ၶဵၼ် ၵႅမ် ၶုၼ် သူၼ် ပွင် သိုင် လိူမ်", engToTai("khan kaam ling khaen kem khun son paung sueng loem"));
+        assertEquals("ၶတ် လၢတ် လိၵ် လဵပ် လႅပ် လုၵ် တူတ် ပွၵ် ၶိုတ် ၵိူတ်", engToTai("khat laat lik laep lep luk tot pauk khuet koet"));
+
     }
 
 
