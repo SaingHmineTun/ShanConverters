@@ -43,6 +43,66 @@ public class ShanTranslitWordTest {
     }
 
     @Test
+    public void Test1ett() {
+
+        // Test ဢႃ ၊ ဢီ ၊ ဢေ ၊ ဢႄ ၊ ဢူ ၊ ဢူဝ် ၊ ဢေႃ ၊ ဢိုဝ် ၊ ဢိူဝ်
+        Assert.assertEquals("ၸ", ShanTranslit.engToTai("tsa"));
+        Assert.assertEquals("ၶ", ShanTranslit.engToTai("kha"));
+        Assert.assertEquals("င", ShanTranslit.engToTai("nga"));
+        Assert.assertEquals("ထ", ShanTranslit.engToTai("tha"));
+        Assert.assertEquals("ၼ", ShanTranslit.engToTai("na"));
+        Assert.assertEquals("ၽ", ShanTranslit.engToTai("pha"));
+        Assert.assertEquals("လ", ShanTranslit.engToTai("la"));
+        Assert.assertEquals("ဝ", ShanTranslit.engToTai("wa"));
+        Assert.assertEquals("ႁ", ShanTranslit.engToTai("ha"));
+        Assert.assertEquals("ဢ", ShanTranslit.engToTai("a"));
+        Assert.assertEquals("ၵျ", ShanTranslit.engToTai("kya"));
+        Assert.assertEquals("ၶျ", ShanTranslit.engToTai("khya"));
+        Assert.assertEquals("ၵြ", ShanTranslit.engToTai("kra"));
+        Assert.assertEquals("တြ", ShanTranslit.engToTai("tra"));
+        Assert.assertEquals("ပျ", ShanTranslit.engToTai("pya"));
+
+
+        // ဢႃ
+        Assert.assertEquals("ပႃ", ShanTranslit.engToTai("pa\u030ca"));
+        Assert.assertEquals("ပႃး", ShanTranslit.engToTai("pa\u0301a"));
+        Assert.assertEquals("သြႃ", ShanTranslit.engToTai("sra\u030ca"));
+        Assert.assertEquals("ပျႃ", ShanTranslit.engToTai("pya\u030ca"));
+        Assert.assertEquals("ဝႃ", ShanTranslit.engToTai("wa\u030ca"));
+
+
+        // ဢီ
+        Assert.assertEquals("ထီ", ShanTranslit.engToTai("thi\u030ci"));
+        Assert.assertEquals("ထီး", ShanTranslit.engToTai("thi\u0301i"));
+        Assert.assertEquals("ရီ", ShanTranslit.engToTai("ri\u030ci"));
+        Assert.assertEquals("ၾီး", ShanTranslit.engToTai("fi\u0301i"));
+
+
+        // ဢေ ၊ ဢႄ
+        Assert.assertEquals("ႁေ", ShanTranslit.engToTai("ha\u030ce"));
+        Assert.assertEquals("ႁေး", ShanTranslit.engToTai("ha\u0301e"));
+        Assert.assertEquals("မႄ", ShanTranslit.engToTai("me\u030c"));
+        Assert.assertEquals("မႄႈ", ShanTranslit.engToTai("me\u0304"));
+
+
+        // ဢူ ၊ ဢူဝ် ၊ ဢေႃ
+        Assert.assertEquals("ၾူ", ShanTranslit.engToTai("fu\u030c"));
+        Assert.assertEquals("ၾူး", ShanTranslit.engToTai("fu\u0301"));
+        Assert.assertEquals("သူဝ်", ShanTranslit.engToTai("so\u030c"));
+        Assert.assertEquals("သူဝ်း", ShanTranslit.engToTai("so\u0301"));
+        Assert.assertEquals("လေႃ", ShanTranslit.engToTai("la\u030cu"));
+        Assert.assertEquals("လေႃး", ShanTranslit.engToTai("la\u0301u"));
+
+
+        // ဢိုဝ် ၊ ဢိူဝ်
+        Assert.assertEquals("လိုဝ်", ShanTranslit.engToTai("lu\u030ce"));
+        Assert.assertEquals("လိုဝ်း", ShanTranslit.engToTai("lu\u0301e"));
+        Assert.assertEquals("ယိူဝ်", ShanTranslit.engToTai("yo\u030ce"));
+        Assert.assertEquals("ယိူဝ်း", ShanTranslit.engToTai("yo\u0301e"));
+
+    }
+
+    @Test
     public void Test2() {
 //        assertEquals("hap", taiToEng("ႁပ်"));
         // မ် ၊ ၼ် ၊ င်
@@ -71,6 +131,28 @@ public class ShanTranslitWordTest {
     }
 
     @Test
+    public void Test2ett() {
+
+        // မ် ၊ ၼ် ၊ င်
+        // ဢမ် ၊ ဢၢမ် ၊ ဢိမ် ၊ ဢဵမ် ၊ ဢႅမ် ၊ ဢုမ် ၊ ဢူမ် ၊ ဢွမ် ၊ ဢိုမ် ၊ ဢိူမ်
+        Assert.assertEquals("ယမ်", ShanTranslit.engToTai("ya\u030cm"));
+        Assert.assertEquals("မၼ်ႊ", ShanTranslit.engToTai("ma\u1dc8n"));
+        Assert.assertEquals("လၼ်", ShanTranslit.engToTai("la\u030cn"));
+        Assert.assertEquals("လၼ်း", ShanTranslit.engToTai("la\u0301n"));
+        Assert.assertEquals("လၢမ်", ShanTranslit.engToTai("la\u030cam"));
+        Assert.assertEquals("လၢမ်း", ShanTranslit.engToTai("la\u0301am"));
+        Assert.assertEquals("ၸိင်", ShanTranslit.engToTai("tsi\u030cng"));
+        Assert.assertEquals("ၸိင်း", ShanTranslit.engToTai("tsi\u0301ng"));
+        Assert.assertEquals("ပဵၼ်", ShanTranslit.engToTai("pa\u030cen"));
+        Assert.assertEquals("ထႅင်း", ShanTranslit.engToTai("the\u0301ng"));
+        Assert.assertEquals("ၵုၼ်း", ShanTranslit.engToTai("ku\u0301n"));
+        Assert.assertEquals("ၼူမ်", ShanTranslit.engToTai("no\u030cm"));
+        Assert.assertEquals("ႁွမ်", ShanTranslit.engToTai("ha\u030cum"));
+        Assert.assertEquals("ၶိုၼ်း", ShanTranslit.engToTai("khu\u0301en"));
+        Assert.assertEquals("ၽိူၼ်း", ShanTranslit.engToTai("pho\u0301en"));
+    }
+
+    @Test
     public void Test3() {
         // ဢဝ် ၊ ဢၢဝ် ၊ ဢိဝ် ၊ ဢဵဝ် ၊ ဢႅဝ် ၊ ဢႂ်
         Assert.assertEquals("kha\u030co", ShanTranslit.taiToEng("ၶဝ်"));
@@ -90,10 +172,28 @@ public class ShanTranslitWordTest {
     }
 
     @Test
+    public void Test3ett() {
+
+        // ဢဝ် ၊ ဢၢဝ် ၊ ဢိဝ် ၊ ဢဵဝ် ၊ ဢႅဝ် ၊ ဢႂ်
+        Assert.assertEquals("ၶဝ်", ShanTranslit.engToTai("kha\u030co"));
+        Assert.assertEquals("ၶဝ်း", ShanTranslit.engToTai("kha\u0301o"));
+        Assert.assertEquals("ငဝ်", ShanTranslit.engToTai("nga\u030co"));
+        Assert.assertEquals("ၵၢဝ်း", ShanTranslit.engToTai("ka\u0301ao"));
+        Assert.assertEquals("လိဝ်း", ShanTranslit.engToTai("li\u0301o"));
+        Assert.assertEquals("ၽဵဝ်း", ShanTranslit.engToTai("pha\u0301eo"));
+        Assert.assertEquals("ၶႅဝ်", ShanTranslit.engToTai("khe\u030cao"));
+        Assert.assertEquals("ထႂ်", ShanTranslit.engToTai("tha\u030cue"));
+        Assert.assertEquals("ထႂ်း", ShanTranslit.engToTai("tha\u0301ue"));
+    }
+
+    @Test
     public void Test4() {
         // ၵႆ ၊ ၵၺ်
         Assert.assertEquals("kha\u030ci", ShanTranslit.taiToEng("ၶႆ"));
+        Assert.assertEquals("ka\u0300i", ShanTranslit.taiToEng("ၵႆႇ"));
+        Assert.assertEquals("ma\u0304i", ShanTranslit.taiToEng("မႆႈ"));
         Assert.assertEquals("kha\u0301i", ShanTranslit.taiToEng("ၶႆး"));
+        Assert.assertEquals("la\u0302\u0330i", ShanTranslit.taiToEng("လႆႉ"));
         Assert.assertEquals("kha\u1dc8i", ShanTranslit.taiToEng("ၶႆႊ"));
         Assert.assertEquals("wa\u030ci", ShanTranslit.taiToEng("ဝႆ"));
         Assert.assertEquals("ka\u030cai", ShanTranslit.taiToEng("ၵၢႆ"));
@@ -111,6 +211,19 @@ public class ShanTranslitWordTest {
     }
 
     @Test
+    public void Test4ett() {
+        // ၵႆ ၊ ၵၺ်
+        Assert.assertEquals("ၶႆႊ", ShanTranslit.engToTai("kha\u1dc8i"));
+        Assert.assertEquals("ဝႆ", ShanTranslit.engToTai("wa\u030ci"));
+        Assert.assertEquals("ၵၢႆး", ShanTranslit.engToTai("ka\u0301ai"));
+        Assert.assertEquals("လုၺ်", ShanTranslit.engToTai("lu\u030ci"));
+        Assert.assertEquals("ၶူၺ်", ShanTranslit.engToTai("kho\u030ci"));
+        Assert.assertEquals("ၶွႆး", ShanTranslit.engToTai("kha\u0301ui"));
+        Assert.assertEquals("ၸိုၺ်", ShanTranslit.engToTai("tsu\u030cei"));
+        Assert.assertEquals("ဝိူၺ်", ShanTranslit.engToTai("wo\u030cei"));
+    }
+
+    @Test
     public void Test5() {
         // ႂ
         Assert.assertEquals("khwa\u030ca", ShanTranslit.taiToEng("ၶႂႃ"));
@@ -122,6 +235,16 @@ public class ShanTranslitWordTest {
         Assert.assertEquals("kwa\u030cam", ShanTranslit.taiToEng("ၵႂၢမ်"));
         Assert.assertEquals("kwa\u0301am", ShanTranslit.taiToEng("ၵႂၢမ်း"));
         Assert.assertEquals("swa\u030cang", ShanTranslit.taiToEng("သႂၢင်"));
+    }
+
+    @Test
+    public void Test5ett() {
+        // ႂ
+        Assert.assertEquals("ၶႂႃး", ShanTranslit.engToTai("khwa\u0301a"));
+        Assert.assertEquals("ၵႂၢႆ", ShanTranslit.engToTai("kwa\u030cai"));
+        Assert.assertEquals("ၶႂၢင်း", ShanTranslit.engToTai("khwa\u0301ang"));
+        Assert.assertEquals("ၵႂၢမ်း", ShanTranslit.engToTai("kwa\u0301am"));
+        Assert.assertEquals("သႂၢင်", ShanTranslit.engToTai("swa\u030cang"));
     }
 
 
@@ -150,6 +273,23 @@ public class ShanTranslitWordTest {
         Assert.assertEquals("tu\u0301ek", ShanTranslit.taiToEng("တိုၵ်း"));
         Assert.assertEquals("po\u030cek", ShanTranslit.taiToEng("ပိူၵ်"));
         Assert.assertEquals("po\u0301ek", ShanTranslit.taiToEng("ပိူၵ်း"));
+    }
+
+
+    @Test
+    public void Test6ett() {
+        // ပ် ၊ တ် ၊ ၵ်
+        // ဢပ် ၊ ဢၢပ် ၊ ဢိပ် ၊ ဢဵပ် ၊ ဢႅပ် ၊ ဢုပ် ၊ ဢူပ် ၊ ဢွပ် ၊ ဢိုပ် ၊ ဢိူပ်
+        Assert.assertEquals("ပပ်း", ShanTranslit.engToTai("pa\u0301p"));
+        Assert.assertEquals("လၢတ်း", ShanTranslit.engToTai("la\u0301at"));
+        Assert.assertEquals("ထိပ်", ShanTranslit.engToTai("thi\u030cp"));
+        Assert.assertEquals("သဵပ်", ShanTranslit.engToTai("sa\u030cep"));
+        Assert.assertEquals("ဝႅပ်း", ShanTranslit.engToTai("we\u0301p"));
+        Assert.assertEquals("တုပ်း", ShanTranslit.engToTai("tu\u0301p"));
+        Assert.assertEquals("ငူပ်", ShanTranslit.engToTai("ngo\u030cp"));
+        Assert.assertEquals("လွၵ်း", ShanTranslit.engToTai("la\u0301uk"));
+        Assert.assertEquals("တိုၵ်း", ShanTranslit.engToTai("tu\u0301ek"));
+        Assert.assertEquals("ပိူၵ်", ShanTranslit.engToTai("po\u030cek"));
     }
 
 

@@ -12,6 +12,5 @@ public class Main {
         Arrays.stream(phrases).forEach(s -> {
             result.append(ShanTranslit.taiToEng(s)).append(" ");
         });
-        System.out.println(result.toString().trim());
     }
 }
