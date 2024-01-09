@@ -1,3 +1,5 @@
+package it.saimao.shan_converter.breakers;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +19,6 @@ import java.util.List;
 
 	public static final String ssSymbol = "\u1039";
 
-	public static final String ngaThat = "\u1004\u103a";
-
 	public static final String aThat = "\u103a";
 
 	// Regular expression pattern for Myanmar syllable breaking
@@ -37,7 +37,7 @@ import java.util.List;
 
 		List<String> segmentList = new ArrayList<String>(Arrays.asList(outputs));
 
-		if (segmentList.size() > 0) {
+		if (!segmentList.isEmpty()) {
 			segmentList.remove(0);
 		}
 
