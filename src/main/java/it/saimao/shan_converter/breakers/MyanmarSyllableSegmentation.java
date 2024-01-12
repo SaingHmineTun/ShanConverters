@@ -10,7 +10,7 @@ import java.util.List;
  */
     public class MyanmarSyllableSegmentation {
 
-	public static final String myConsonant = "\u1000-\u1022\u1075-\u1081"; // "က-ဢၵ-ႁ"
+	public static final String myConsonant = "\u1000-\u1021"; // "က-ဢၵ-ႁ"
 
 	public static final String enChar = "a-zA-Z0-9";
 
@@ -27,7 +27,7 @@ import java.util.List;
 	public static final String BREAK_PATTERN = "((?<!" + ssSymbol + ")[" + myConsonant + "](?![" + aThat + ssSymbol
 			+ "])" + "|[" + enChar + otherChar + "])";
 
-	public synchronized List<String> segment(String text) {
+	public static synchronized List<String> segment(String text) {
 
 		if (text == null) {
 			throw new NullPointerException();
