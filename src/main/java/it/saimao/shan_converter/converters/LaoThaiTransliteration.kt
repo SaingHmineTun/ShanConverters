@@ -1,6 +1,8 @@
 package it.saimao.shan_converter.converters
 
 /*
+A kotling class that is used to transliterate texts between Lao and That
+Source code is obtained from LaoNLP project which is written is Python
 Source : https://github.com/wannaphong/LaoNLP/blob/master/laonlp/transliterate/__init__.py
  */
 

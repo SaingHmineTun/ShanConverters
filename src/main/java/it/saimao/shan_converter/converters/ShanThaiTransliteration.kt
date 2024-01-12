@@ -1,6 +1,6 @@
 package it.saimao.shan_converter.converters
 
-//class LaoThaiTransliteration {
+
 val shan2thai_transliteration = mapOf(
     "\u1075" to "\u0E01", // Ka
     "\u1076" to "\u0E02", // Kha
