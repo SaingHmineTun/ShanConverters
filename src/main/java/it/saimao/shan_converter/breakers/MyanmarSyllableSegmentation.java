@@ -10,7 +10,7 @@ import java.util.List;
  */
     public class MyanmarSyllableSegmentation {
 
-	public static final String myConsonant = "\u1000-\u1021"; // "က-ဢၵ-ႁ"
+	public static final String myConsonant = "\u1000-\u1022ၵ-ႁ"; // "က-ဢၵ-ႁ"
 
 	public static final String enChar = "a-zA-Z0-9";
 
