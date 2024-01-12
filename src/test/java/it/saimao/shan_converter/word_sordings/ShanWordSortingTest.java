@@ -1,5 +1,6 @@
 package it.saimao.shan_converter.word_sordings;
 
+import it.saimao.shan_converter.others.ShanSyllables;
 import org.junit.Test;
 
 public class ShanWordSortingTest {

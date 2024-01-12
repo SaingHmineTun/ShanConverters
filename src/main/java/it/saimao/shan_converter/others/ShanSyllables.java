@@ -1,8 +1,14 @@
-package it.saimao.shan_converter.word_sordings;
+package it.saimao.shan_converter.others;
 
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * This program will output every possible Shan word that we can write!
+ * Initially, intended to test for Shan Word Suggestion | Correction project (A dead project)
+ *
+ *
+ */
 public class ShanSyllables {
     String[] consonants = {
             "ၵ", "ၶ", "င", "ၸ", "သ", "ၺ",
