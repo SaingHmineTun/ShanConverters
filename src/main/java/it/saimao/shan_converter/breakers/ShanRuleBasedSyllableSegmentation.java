@@ -69,5 +69,9 @@ public class ShanRuleBasedSyllableSegmentation {
         return output;
     }
 
+    public static String[] segmentAsArray(String input) {
+        return segment(input).split("\u0020");
+    }
+
 
 }

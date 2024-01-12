@@ -30,6 +30,8 @@ import java.util.stream.Stream;
  * 4. Median - 11
  * ကျ ၊ ကြ ၊ ကွ ၊ ကှ ၊ ကျွ ၊ ကြွ ၊ ကွှ ၊ ကျှ ၊ ကြှ ၊ ကျွှ ၊ ကြွှ
  * ====================================================
+ *
+ *
  * Myanmar sentences are usually separated with poke-kalay (၊), poke-ma(။) or space!
  * But there is no rule for word breaking!
  * မြန်မာစာ word တစ်ခုကို consonant, vowel, de-vowelizer, median တွေနဲ့ ဖွဲ့စည်းထားလေ့ ရှိတယ်။
@@ -39,6 +41,8 @@ import java.util.stream.Stream;
  * ၃) Pali Word - ပြက္ခဒိန်
  * ၄) Loan Word - ကွန်ပျူတာ ၊ ရေဒီယို
  * ======================================================
+ *
+ *
  * Algorithm တည်ဆောက်ထားပုံ
  * ပထမဦးစွာ C, V, D, M တွေကို Weight သတ်မှတ်ပါတယ်
  * a) C - 33 (1 - 33)

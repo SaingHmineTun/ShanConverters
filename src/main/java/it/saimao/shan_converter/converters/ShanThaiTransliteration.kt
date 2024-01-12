@@ -2,6 +2,7 @@ package it.saimao.shan_converter.converters
 
 
 val shan2thai_transliteration = mapOf(
+    // CONSONANT Transliteration
     "\u1075" to "\u0E01", // Ka
     "\u1076" to "\u0E02", // Kha
     // "\u1077" to "", // Ka Yai
