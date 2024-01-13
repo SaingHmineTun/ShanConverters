@@ -38,13 +38,21 @@ public class ShanWordSorting implements Comparator<String> {
 
     // ၵျ တြ ၵႂ ၵွ
     // CC - 38 - 41
-    static String[] medians = {"ျ", "ြ", "ႂ", "ွ"};
+    static String[] medians = {"ျ", "ြ", "ႂ်", "ႂ", "ွ"};
 
 
     static List<String> weights = Stream.of(consonants, medians, vowels, tones, consonantsCombination, deVowelizers).flatMap(Stream::of).toList();
 
 
+    public static String compareWordString(String w1, String w2) {
+        int compareWordInt = compareWordInt(w1, w2);
+        if (compareWordInt == 1) return w1;
+        else if (compareWordInt == -1) return w2;
+        else return "Same Word";
+    }
+
     public static int compareWordInt(String w1, String w2) {
+        if (w1.equals(w2)) return 0;
         w1 = w1.replaceAll("ႆ", "ၺ်");
         w2 = w2.replaceAll("ႆ", "ၺ်");
         int maxWeight = 0;
@@ -174,7 +182,7 @@ public class ShanWordSorting implements Comparator<String> {
 
 
     public static int compareValue(int v1, int v2) {
-        return Integer.compare(v1, v2);
+        return Integer.compare(v2, v1);
 //        return Integer.compare(v2, v1);
     }
 
