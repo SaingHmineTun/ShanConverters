@@ -9,8 +9,7 @@ public class ShanWordSortingTest {
     @Test
     public void testConsonantSorting() {
         List<String> strings = Arrays.asList("ၵ", "ၵၶ", "တတ", "တၼ", "ၼ", "ပ", "ႁ", "ၶ", "လ");
-        strings.sort(new ShanWordSorting());
-        strings.forEach(System.out::println);
+        printData(strings);
     }
 
     @Test
@@ -20,15 +19,16 @@ public class ShanWordSortingTest {
     }
 
     private void printData(List<String> strings) {
+        strings.forEach(s -> System.out.print(s + " "));
         strings.sort(new ShanWordSorting());
-        strings.forEach(System.out::println);
+        System.out.println();
+        strings.forEach(s -> System.out.print(s + " "));
     }
 
     @Test
     public void testVowelSorting() {
         List<String> strings = Arrays.asList("ၵႃ", "ၵီ", "ၵူ", "ၵိုဝ်", "ၵိူဝ်", "ၵေ", "ၵူဝ်", "ၵႄ", "ၵေႃ");
-        strings.sort(new ShanWordSorting());
-        strings.forEach(System.out::println);
+        printData(strings);
 //        printData(Arrays.asList("ဢေႃ", "ဢူဝ်", "ဢူ"));
 
     }
@@ -56,20 +56,42 @@ public class ShanWordSortingTest {
         printData(Arrays.asList("ၶွတ်", "ၶၢတ်", "ၶျၢင်း"));
     }
 
+    // Bug
     @Test
     public void testReplaceKaikhin() {
         printData(Arrays.asList("ၵႆ", "ၵၢႆး", "ၶွႆ", "ၶွႆႈ", "ၶႆႇ"));
     }
 
+    // Bug
     @Test
     public void testDevowelizationWithTones() {
-//        printData(Arrays.asList("ၶၢတ်", "ၶၢတ်း", "ၶုတ်ႉ", "ၶုၼ်း", "ၶုၵ်ႉ", "ၶူၵ်ႉ", "ၶူၵ်", "ၶိူၵ်"));
-        printData(Arrays.asList("ၶၢတ်", "ၶုၵ်း"));
+        printData(Arrays.asList("ၶၢတ်", "ၶၢတ်း", "ၶုတ်ႉ", "ၶုၼ်း", "ၶုၵ်ႉ", "ၶူၵ်ႉ", "ၶူၵ်", "ၶိူၵ်"));
+//        printData(Arrays.asList("ၶၢတ်", "ၶုၵ်း"));
     }
 
     @Test
     public void testText1() {
-        printData(Arrays.asList("ၵႃႇလႃး", "ၵတ်ႉၶႅၼ်ႇ", "ၵျမ်းတေႉ", "ၵျေႃႇတေႉ", "ၵႃးပလိၵ်ႈ", "ၵႃးထႆး"));
+        printData(Arrays.asList("ၵႃႇလႃး", "ၵတ်ႉၶႅၼ်ႇ", "ၵႂ်ႊႁႅင်းဝႆႉ", "ၵြႃးပဵၼ်ၵလေး", "ၵျမ်းတေႉ", "ၵျေႃႇတေႉ", "ၵႃးပလိၵ်ႈ", "ၵႃးထႆး"));
+    }
+
+    @Test
+    public void testText2() {
+        printData(Arrays.asList("ႁူဝ်ၸႂ်", "ႁဵတ်ႉႁိူၼ်း", "ႁဵတ်ႉၵၢၼ်", "ပူႇမွၼ်ႇ", "ပူႇၼၢႆး", "ပူႇထဝ်ႈ", "ပူႇပႃ", "ပူၵရိတ်ႇ", "ပူႇသၽႃႇဝ", "ပူႇသၢမ်"));
+    }
+
+    @Test
+    public void testText3() {
+        printData(Arrays.asList("မၢၵ်ႇၵမ်ႇ", "မၢၵ်ႇၸွၵ်း", "မၢၵ်ႇၶိူဝ်", "မၢၵ်ႇၵႅမ်ႈၶွင်ႇ", "မၢၵ်ႇၵႅမ်ႈ", "မၢၵ်ႇမူင်ႊ", "မၢၵ်ႇမၼ်ႉ", "မၢၵ်ႇမွၼ်ႊ", "မၢၵ်ႇၶူဝ်", "မၢၵ်ႇလၢင်း"));
+    }
+
+    @Test
+    public void testText4() {
+        printData(Arrays.asList("ၸၢႆးမၢဝ်း", "ၸၢႆးၵွၼ်းၶမ်း", "ၸၢႆးၵွၼ်းမၢဝ်း", "ၸၢႆးၵွၼ်းလႅင်း", "ၸၢႆးၵွၼ်ႊလၢဝ်", "ၸၢႆးၵျေႃႇသူၺ်ႇ", "ၸၢႆးၵဵင်းတူင်", "ၸၢႆးၵဵင်းယၢင်း", "ၸၢႆးၵိုင်", "ၸၢႆးၵိူင်ႇ"));
+    }
+
+    @Test
+    public void testText5() {
+        printData(Arrays.asList("ၵၢၼ်ႁဵၼ်း", "ၵၢၼ်ႁဵတ်ႉ", "ၵၢၼ်မိူင်း", "ၵၢၼ်ၵႃႉၶၢႆ", "ၵၢၼ်တေႃႉၶူဝ်း", "ၵၢၼ်ဢွၼ်ႇလႅင်း", "ၵၢၼ်ပရႁိတ", "ၵၢၼ်လီၵုသူဝ်ႇ", "ၵၢၼ်ၸိူဝ်ႉၶိူဝ်း", "ၵၢၼ်လိၵ်ႈလၢႆး"));
     }
 
 
