@@ -11,14 +11,14 @@ public class TaiLeSyllableSegmentationTest {
     @Test
     public void test_segment_with_tone() {
         String input = "ᥖᥥᥲᥘᥭᥴᥑᥪᥢᥲᥛᥫᥰᥞᥩᥖᥲᥗᥪᥒᥴᥙᥣᥭᥚᥨᥭᥰᥞᥣᥳ";
-        String output = TaiNueaSyllableBreaker.syllable_break(input);
+        String output = TaiLeSyllableSegmentation.segmentAsString(input);
         System.out.println(output);
     }
 
     @Test
     public void test_segment_without_tone() {
         String input = "ᥖᥥᥘᥭᥑᥪᥢᥛᥫᥞᥩᥖᥗᥪᥒᥙᥣᥭᥚᥨᥭᥞᥣ";
-        String output = TaiNueaSyllableBreaker.syllable_break(input);
+        String output = TaiLeSyllableSegmentation.segmentAsString(input);
         System.out.println(output);
     }
 
@@ -29,7 +29,8 @@ public class TaiLeSyllableSegmentationTest {
                 "ᥖᥤᥲᥢᥛᥳᥙᥣᥢᥰᥢᥛᥳᥔᥩᥢᥰ ᥟᥢᥴ sspp ᥑᥝᥴᥕᥧᥱᥝᥭᥳᥢᥢᥳ ᥘᥭᥲᥒᥤᥢᥰᥑᥣᥝᥴᥝᥭᥳᥝᥣᥲ ᥞᥬᥲᥙᥣᥭᥐᥣᥱᥖᥤᥲᥘᥩᥖᥲᥚᥥᥰᥢᥭᥴᥝᥣᥱ \n" +
                 "ᥖᥤᥲᥗᥧᥒᥳᥛᥣᥝᥰᥢᥭᥳᥖᥥᥳ ᥐᥨᥢᥰᥖᥭᥰᥖᥧᥐᥳᥑᥞᥦᥒᥰᥢᥣᥱᥑᥣᥲ\n" +
                 "ᥙᥤᥲᥢᥩᥒᥳᥑᥣᥲᥖᥤᥲᥢᥛᥳᥑᥛᥰᥐᥩᥲ ᥛᥣᥰᥕᥧᥱᥖᥤᥲᥞᥫᥢᥰᥑᥣᥲ ᥙᥩᥰᥘᥭᥲ 3 ᥝᥨᥒᥴᥙᥣᥭᥴᥕᥝᥳ";
-        String output = TaiNueaSyllableBreaker.syllable_break(input);
+        input = input.replaceAll("[" + TaiLeSyllableSegmentation.endWordChar + "]", "");
+        String output = TaiLeSyllableSegmentation.segmentAsString(input);
         System.out.println(output);
     }
 
