@@ -94,6 +94,11 @@ import java.util.stream.Stream;
  * 3. else result = 1;
  * 4. return result
  */
+
+/**
+ * This is written only for the purpose of learning Shan Word Sorting,
+ * This program is not finished and will not give you the correct results.
+ */
 public class MyanmarWordSorting implements Comparator<String> {
     String[] consonants = {
             "က", "ခ", "ဂ", "ဃ", "င",
