@@ -1,6 +1,6 @@
 # ShanConverters
 
-## This repo will have all the converters and syllable word breakers that I have been working on.
+# This repo will have all the converters and syllable word breakers that I have been working on.
 
 ### They are all written in Java and you are welcomed to contribute it with other languages.
 
