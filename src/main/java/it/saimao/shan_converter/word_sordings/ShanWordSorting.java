@@ -19,7 +19,6 @@ public class ShanWordSorting implements Comparator<String> {
 
     static String asat = "\u103A";
 
-
     // V - 20 - 29
     static String[] vowels = {
             "ဢႃ", "ဢီ", "ဢေ", "ဢႄ", "ဢူ", "ဢူဝ်", "ဢေႃ", "ဢိုဝ်", "ဢိူဝ်", "ဢႂ်"
