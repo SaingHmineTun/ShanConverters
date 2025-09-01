@@ -10,90 +10,78 @@ import java.util.stream.Stream;
  *
  */
 public class ShanSyllables {
-    String[] consonants = {
+    public static final String[] CONSONANTS = {
             "ၵ", "ၶ", "င", "ၸ", "သ", "ၺ",
             "တ", "ထ", "ၼ", "ပ", "ၽ", "ၾ",
             "မ", "ယ", "ရ", "လ", "ဝ", "ႁ", "ဢ"
     };
 
-    String[] vowels = {
+    public static final String[] VOWELS = {
             "ဢ", "ဢႃ", "ဢီ", "ဢေ", "ဢႄ",
             "ဢူ", "ဢူဝ်", "ဢေႃ", "ဢိုဝ်", "ဢိူဝ်",
     };
 
-    String[] meKaSon15 = {
+    public static final String[] ME_KAP_SON_15 = {
             "ဢႆ", "ဢၢႆ", "ဢုၺ်", "ဢိူၺ်", "ဢွႆ",
             "ဢိုၺ်", "ဢိူၺ်",
             "ဢဝ်", "ဢၢဝ်", "ဢိဝ်",
             "ဢဵဝ်", "ဢႅဝ်", "ဢႂိုဝ်", "ဢႂိူဝ်", "ဢႂ်",
     };
 
-    String[] toPhyatMa = {
+    public static final String[] TO_PHYAT_MA = {
             "ဢမ်", "ဢၢမ်", "ဢိမ်", "ဢဵမ်", "ဢႅမ်",
             "ဢုမ်", "ဢူမ်", "ဢွမ်", "ဢိုမ်", "ဢိူမ်",
     };
 
-    String[] toPhyatNa = {
+    public static final String[] TO_PHYAT_NA = {
             "ဢၼ်", "ဢၢၼ်", "ဢိၼ်", "ဢဵၼ်", "ဢႅၼ်",
             "ဢုၼ်", "ဢူၼ်", "ဢွၼ်", "ဢိုၼ်", "ဢိူၼ်",
     };
 
-    String[] toPhyatNga = {
+    public static final String[] TO_PHYAT_NGA = {
             "ဢင်", "ဢၢင်", "ဢိင်", "ဢဵင်", "ဢႅင်",
             "ဢုင်", "ဢူင်", "ဢွင်", "ဢိုင်", "ဢိူင်",
     };
 
-    String[] toPhyatPa = {
+    public static final String[] TO_PHYAT_PA = {
             "ဢပ်", "ဢၢပ်", "ဢိပ်", "ဢဵပ်", "ဢႅပ်",
             "ဢုပ်", "ဢူပ်", "ဢွပ်", "ဢိုပ်", "ဢိူပ်",
     };
-    String[] toPhyatTa = {
+    public static final String[] TO_PHYAT_TA = {
             "ဢတ်", "ဢၢတ်", "ဢိတ်", "ဢဵတ်", "ဢႅတ်",
             "ဢုတ်", "ဢူတ်", "ဢွတ်", "ဢိုတ်", "ဢိူတ်",
     };
-    String[] toPhyatKa = {
+    public static final String[] TO_PHYAT_KA = {
             "ဢၵ်", "ဢၢၵ်", "ဢိၵ်", "ဢဵၵ်", "ဢႅၵ်",
             "ဢုၵ်", "ဢူၵ်", "ဢွၵ်", "ဢိုၵ်", "ဢိူၵ်",
     };
 
-    String[] toneMarks = {
+    public static final String[] TONE_MARKS = {
            "ႇ", "ႈ", "း", "ႉ", "ႊ"
     };
 
-    public List<String> steps = Stream.of(vowels, meKaSon15, toPhyatMa, toPhyatNa, toPhyatNga, toPhyatPa, toPhyatTa, toPhyatKa).flatMap(Stream::of).toList();
+    private static List<String> steps = Stream.of(VOWELS, ME_KAP_SON_15, TO_PHYAT_MA, TO_PHYAT_NA, TO_PHYAT_NGA, TO_PHYAT_PA, TO_PHYAT_TA, TO_PHYAT_KA).flatMap(Stream::of).toList();
 
-    public void getEveryPossibleShanWordThatWeCanWriteDown() {
+    public static void getEveryPossibleShanWordThatWeCanWriteDown() {
 
-        for (String consonant: consonants) {
+        for (String consonant: CONSONANTS) {
             System.out.println(consonant);
-            for (String a: vowels) {
+            for (String a: VOWELS) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: toneMarks) {
+                    for (String b: TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
                 }
             }
             System.out.println();
-            for (String a: meKaSon15) {
+            for (String a: ME_KAP_SON_15) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: toneMarks) {
-                        System.out.print(a + b);
-                    }
-                    System.out.println();
-                }
-            }
-            System.out.println();
-
-            for (String a: toPhyatMa) {
-                if (a.length() > 1) {
-                    a = a.replaceAll("^.", consonant);
-                    System.out.print(a);
-                    for (String b: toneMarks) {
+                    for (String b: TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -101,11 +89,11 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: toPhyatNa) {
+            for (String a: TO_PHYAT_MA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: toneMarks) {
+                    for (String b: TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -113,22 +101,11 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: toPhyatNga) {
+            for (String a: TO_PHYAT_NA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: toneMarks) {
-                        System.out.print(a + b);
-                    }
-                    System.out.println();
-                }
-            }
-            System.out.println();
-            for (String a: toPhyatPa) {
-                if (a.length() > 1) {
-                    a = a.replaceAll("^.", consonant);
-                    System.out.print(a);
-                    for (String b: toneMarks) {
+                    for (String b: TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -136,11 +113,22 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: toPhyatTa) {
+            for (String a: TO_PHYAT_NGA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: toneMarks) {
+                    for (String b: TONE_MARKS) {
+                        System.out.print(a + b);
+                    }
+                    System.out.println();
+                }
+            }
+            System.out.println();
+            for (String a: TO_PHYAT_PA) {
+                if (a.length() > 1) {
+                    a = a.replaceAll("^.", consonant);
+                    System.out.print(a);
+                    for (String b: TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -148,11 +136,23 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: toPhyatKa) {
+            for (String a: TO_PHYAT_TA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: toneMarks) {
+                    for (String b: TONE_MARKS) {
+                        System.out.print(a + b);
+                    }
+                    System.out.println();
+                }
+            }
+            System.out.println();
+
+            for (String a: TO_PHYAT_KA) {
+                if (a.length() > 1) {
+                    a = a.replaceAll("^.", consonant);
+                    System.out.print(a);
+                    for (String b: TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();

@@ -9,13 +9,9 @@ import java.util.Queue;
 import java.util.logging.Handler;
 
 public class ShanWordIndex {
-
-    public static void main(String[] args) {
-        var map = getShanWordsIndex("တေလႆႈၶိုၼ်ႈမိူဝ်းႁွတ်ႈထိုင်ပၢႆႊၽူၺ်းႁ");
-        System.out.println(map);
-    }
     public static Map<String, Queue<Integer>> getShanWordsIndex(String input) {
         var map = new HashMap<String, Queue<Integer>>();
+
         var syl = ShanRuleBasedSyllableSegmentation.segmentAsArray(input);
         for (int i = 0; i < syl.length; i++) {
             if (!map.containsKey(syl[i])) {

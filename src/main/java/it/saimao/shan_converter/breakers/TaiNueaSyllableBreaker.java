@@ -1,8 +1,13 @@
 package it.saimao.shan_converter.breakers;
+
 /*
 Version 2.2
  */
 public class TaiNueaSyllableBreaker {
+    public static final String ENG_CHAR = "a-zA-Z0-9";
+    // "!-/:-@[-`{-~\s"
+    public static final String OTHER_CHAR = "\u1040-\u1049\u104a\u104b!-/:-@\\[-`\\{-~\\s";
+
 
     public static String syllable_break(String input) {
         String result = input.replaceAll("([\\u0028\\u005b\\u007b\\u003c])", "$1\u0020");
@@ -10,23 +15,23 @@ public class TaiNueaSyllableBreaker {
 
         String[] arrs;
         boolean con;
-        int count = 0;
         do {
-            count++;
             result = tm3wordbreaks(result);
             result = checkWordbreak(result);
             result = tm2wordbreaks(result);
             result = checkWordbreak(result);
-            if (count == 100) {
-                break;
-            }
             arrs = result.split("\\u0020");
             con = continueConverting(arrs);
         } while (con);
         result = result.replaceAll("(\\u0020)([\\u104b\\u104a\\u002e\\u002c\\u0029\\u005d\\u007d\\u003e\\u003f\\u0021\\u003a\\u003b\\u0022\\u0027\\u002a\\u005e])", "$2");
         result = result.replaceAll("([\\u0028\\u005b\\u007b\\u003c])(\\u0020)", "$1");
+
+        // Break after tone marks
+        result = result.replaceAll("([" + ENG_CHAR + OTHER_CHAR + "])", " $1 ");
+        // Normalize spaces
+        result = result.replaceAll("( )+", " ");
         result = result.concat("\u0020");
-        return result;
+        return result.strip();
     }
 
     private static boolean continueConverting(String[] tests) {
@@ -43,7 +48,7 @@ public class TaiNueaSyllableBreaker {
                         }
                         // In one word, no more than 2 vowels should exist
                         if (character >= 6499 && character <= 6508) {
-                            vowel_count ++;
+                            vowel_count++;
                         }
                     }
                     if (consonant_count >= 3 || vowel_count >= 2) {

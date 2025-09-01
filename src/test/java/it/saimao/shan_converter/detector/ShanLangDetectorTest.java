@@ -1,22 +1,22 @@
 package it.saimao.shan_converter.detector;
 
-import it.saimao.shan_converter.dectector.ShanZawgyiDetector;
+import it.saimao.shan_converter.dectector.ShanLangDetector;
 import org.junit.Test;
 
-import static it.saimao.shan_converter.dectector.ShanZawgyiDetector.isShanUnicode;
+import static it.saimao.shan_converter.dectector.ShanLangDetector.isShanUnicode;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ShanZawgyiDetectorTest {
+public class ShanLangDetectorTest {
 
     @Test
     public void Test1() {
-        assertFalse("Detect if the input text is shan zawgyi or not", ShanZawgyiDetector.isShanZawgyi("ၵ ဝႃႈ ၵႆႇ ၵွပ်ႈတႆႇမႆႉၼိူဝ်ၵွၼ်း။"));
-        assertFalse("Detect if the input text is shan zawgyi or not", ShanZawgyiDetector.isShanZawgyi("ၶ ဝႃႈ ၶႆႇ မႄႈမၼ်းပႆႇမႃးငွမ်း။"));
-        assertFalse("Detect if the input text is shan zawgyi or not", ShanZawgyiDetector.isShanZawgyi("င ဝႃႈ ငူး လိူၼ်ႈမႃးၸူးတူဝ်ၶဵတ်ႇ။"));
-        assertTrue("Detect if the input text is shan zawgyi or not", ShanZawgyiDetector.isShanZawgyi("ꨀ ဝꨣꨳ ꨀꨯꨲ ꨀြပ္ꨳတꨯꨲမꨯꨵꨓိူဝ္ꨀြꨓ္း။"));
-        assertTrue("Detect if the input text is shan zawgyi or not", ShanZawgyiDetector.isShanZawgyi("င ဝꨣꨳ ငူး လိူꨓ္ꨳမꨣးꨅူးတူဝ္ꨁꨱတ္ꨲ။"));
-        assertTrue("Detect if the input text is shan zawgyi or not", ShanZawgyiDetector.isShanZawgyi(" ꨁ ဝꨣꨳ ꨁꨯꨲ ꨬမꨳမꨓ္းပꨯꨲမꨣးငြမ္း။"));
+        assertFalse("Detect if the input text is shan zawgyi or not", ShanLangDetector.isShanZawgyi("ၵ ဝႃႈ ၵႆႇ ၵွပ်ႈတႆႇမႆႉၼိူဝ်ၵွၼ်း။"));
+        assertFalse("Detect if the input text is shan zawgyi or not", ShanLangDetector.isShanZawgyi("ၶ ဝႃႈ ၶႆႇ မႄႈမၼ်းပႆႇမႃးငွမ်း။"));
+        assertFalse("Detect if the input text is shan zawgyi or not", ShanLangDetector.isShanZawgyi("င ဝႃႈ ငူး လိူၼ်ႈမႃးၸူးတူဝ်ၶဵတ်ႇ။"));
+        assertTrue("Detect if the input text is shan zawgyi or not", ShanLangDetector.isShanZawgyi("ꨀ ဝꨣꨳ ꨀꨯꨲ ꨀြပ္ꨳတꨯꨲမꨯꨵꨓိူဝ္ꨀြꨓ္း။"));
+        assertTrue("Detect if the input text is shan zawgyi or not", ShanLangDetector.isShanZawgyi("င ဝꨣꨳ ငူး လိူꨓ္ꨳမꨣးꨅူးတူဝ္ꨁꨱတ္ꨲ။"));
+        assertTrue("Detect if the input text is shan zawgyi or not", ShanLangDetector.isShanZawgyi(" ꨁ ဝꨣꨳ ꨁꨯꨲ ꨬမꨳမꨓ္းပꨯꨲမꨣးငြမ္း။"));
     }
 
     @Test

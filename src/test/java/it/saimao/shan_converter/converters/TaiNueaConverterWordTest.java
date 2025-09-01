@@ -44,7 +44,7 @@ public class TaiNueaConverterWordTest {
 //        assertEquals("hap", taiToEng("ႁပ်"));
         // မ် ၊ ၼ် ၊ င်
         // ဢမ် ၊ ဢၢမ် ၊ ဢိမ် ၊ ဢဵမ် ၊ ဢႅမ် ၊ ဢုမ် ၊ ဢူမ် ၊ ဢွမ် ၊ ဢိုမ် ၊ ဢိူမ်
-        Assert.assertEquals("ya\u030cm", shn2tdd("ယမ်"));
+        Assert.assertEquals("ᥕᥣᥛ", shn2tdd("ယမ်"));
         Assert.assertEquals("la\u030cn", shn2tdd("လၼ်"));
         Assert.assertEquals("la\u0301n", shn2tdd("လၼ်း"));
         Assert.assertEquals("la\u030cam", shn2tdd("လၢမ်"));
