@@ -8,7 +8,7 @@ import org.json.JSONObject;
 /**
  * 2.1
  */
-public class TaiNueaConverter {
+public final class TaiNueaConverter {
 
     public static String shn2tdd(String input) {
 

@@ -1,6 +1,6 @@
 package it.saimao.shan_language_tools.converters;
 
-public class ShanAyingConverter {
+public final class ShanAyingConverter {
     public static String ayingToShan(String input) {
         String output = input;
         output = output.replaceAll("\\u0075", "ၵ")

@@ -1,6 +1,6 @@
 package it.saimao.shan_language_tools.converters;
 
-public class ShanZawgyiConverter {
+public final class ShanZawgyiConverter {
     public static String uni2zg(String input) {
 
         return input

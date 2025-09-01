@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class ShanWordSorting implements Comparator<String> {
+public final class ShanWordSorting implements Comparator<String> {
 
     // 1 to 19 -> C
     static String[] consonants = {

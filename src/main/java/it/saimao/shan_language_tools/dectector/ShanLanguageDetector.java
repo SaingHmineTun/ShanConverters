@@ -2,7 +2,7 @@ package it.saimao.shan_language_tools.dectector;
 
 import java.util.regex.Pattern;
 
-public class ShanLanguageDetector {
+public final class ShanLanguageDetector {
     public static boolean isShanZawgyi(String input) {
         String regex = ".*[\\uaa00-\\uaa44].*";
         return Pattern.matches(regex, input);

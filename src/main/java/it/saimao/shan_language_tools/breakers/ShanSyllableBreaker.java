@@ -1,6 +1,6 @@
 package it.saimao.shan_language_tools.breakers;
 
-public class ShanSyllableBreaker {
+public final class ShanSyllableBreaker {
 
     private static final String TONE_MARKS = "\u1087\u1088\u1038\u1089\u1037\u108a";
     private static final String ASAT = "\u103a";

@@ -5,7 +5,7 @@ import it.saimao.shan_language_tools.breakers.ShanSyllableBreaker;
 
 import java.util.regex.Pattern;
 
-public class ShanTranslit {
+public final class ShanTranslit {
     public static String taiToEng(String input) {
 
         String output = ShanSyllableBreaker.syllable_break(input);
