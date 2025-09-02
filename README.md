@@ -14,3 +14,11 @@
     There are 2 syllable word breakers developed by me.
 1) **_Shan Syllable Word Breaker_**
 2) **_Tai Nuea Syllable Word Breaker_**
+
+How to use?
+You can get this project in 3 ways 
+
+#### Downloading the jar from [Releases](https://github.com/saimao/ShanLanguageTools/releases)
+
+After downloading, include it in your project
+

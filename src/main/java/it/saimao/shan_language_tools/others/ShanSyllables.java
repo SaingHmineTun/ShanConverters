@@ -16,6 +16,9 @@ public class ShanSyllables {
             "မ", "ယ", "ရ", "လ", "ဝ", "ႁ", "ဢ"
     };
 
+    public static final String[] NUMBERS = {"႐", "႑", "႒", "႓", "႔", "႕", "႖", "႗", "႘", "႙"};
+    ;
+
     public static final String[] VOWELS = {
             "ဢ", "ဢႃ", "ဢီ", "ဢေ", "ဢႄ",
             "ဢူ", "ဢူဝ်", "ဢေႃ", "ဢိုဝ်", "ဢိူဝ်",
@@ -57,43 +60,31 @@ public class ShanSyllables {
     };
 
     public static final String[] TONE_MARKS = {
-           "ႇ", "ႈ", "း", "ႉ", "ႊ"
+            "ႇ", "ႈ", "း", "ႉ", "ႊ"
     };
 
     private static List<String> steps = Stream.of(VOWELS, ME_KAP_SON_15, TO_PHYAT_MA, TO_PHYAT_NA, TO_PHYAT_NGA, TO_PHYAT_PA, TO_PHYAT_TA, TO_PHYAT_KA).flatMap(Stream::of).toList();
 
     public static void getEveryPossibleShanWordThatWeCanWriteDown() {
 
-        for (String consonant: CONSONANTS) {
+        for (String consonant : CONSONANTS) {
             System.out.println(consonant);
-            for (String a: VOWELS) {
+            for (String a : VOWELS) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: TONE_MARKS) {
+                    for (String b : TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
                 }
             }
             System.out.println();
-            for (String a: ME_KAP_SON_15) {
+            for (String a : ME_KAP_SON_15) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: TONE_MARKS) {
-                        System.out.print(a + b);
-                    }
-                    System.out.println();
-                }
-            }
-            System.out.println();
-
-            for (String a: TO_PHYAT_MA) {
-                if (a.length() > 1) {
-                    a = a.replaceAll("^.", consonant);
-                    System.out.print(a);
-                    for (String b: TONE_MARKS) {
+                    for (String b : TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -101,11 +92,11 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: TO_PHYAT_NA) {
+            for (String a : TO_PHYAT_MA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: TONE_MARKS) {
+                    for (String b : TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -113,22 +104,11 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: TO_PHYAT_NGA) {
+            for (String a : TO_PHYAT_NA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: TONE_MARKS) {
-                        System.out.print(a + b);
-                    }
-                    System.out.println();
-                }
-            }
-            System.out.println();
-            for (String a: TO_PHYAT_PA) {
-                if (a.length() > 1) {
-                    a = a.replaceAll("^.", consonant);
-                    System.out.print(a);
-                    for (String b: TONE_MARKS) {
+                    for (String b : TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -136,11 +116,22 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: TO_PHYAT_TA) {
+            for (String a : TO_PHYAT_NGA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: TONE_MARKS) {
+                    for (String b : TONE_MARKS) {
+                        System.out.print(a + b);
+                    }
+                    System.out.println();
+                }
+            }
+            System.out.println();
+            for (String a : TO_PHYAT_PA) {
+                if (a.length() > 1) {
+                    a = a.replaceAll("^.", consonant);
+                    System.out.print(a);
+                    for (String b : TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -148,11 +139,23 @@ public class ShanSyllables {
             }
             System.out.println();
 
-            for (String a: TO_PHYAT_KA) {
+            for (String a : TO_PHYAT_TA) {
                 if (a.length() > 1) {
                     a = a.replaceAll("^.", consonant);
                     System.out.print(a);
-                    for (String b: TONE_MARKS) {
+                    for (String b : TONE_MARKS) {
+                        System.out.print(a + b);
+                    }
+                    System.out.println();
+                }
+            }
+            System.out.println();
+
+            for (String a : TO_PHYAT_KA) {
+                if (a.length() > 1) {
+                    a = a.replaceAll("^.", consonant);
+                    System.out.print(a);
+                    for (String b : TONE_MARKS) {
                         System.out.print(a + b);
                     }
                     System.out.println();
@@ -161,6 +164,50 @@ public class ShanSyllables {
             System.out.println();
             System.out.println();
         }
+    }
+
+    public static String convertEngToShanNumber(String number) {
+        StringBuilder output = new StringBuilder();
+        for (char ch : number.toCharArray()) {
+            int index = ch - '0';
+            output.append(NUMBERS[index]);
+        }
+        return output.toString();
+    }
+
+    public static String convertEngToShanNumber(int number) {
+        return convertEngToShanNumber(String.valueOf(number));
+    }
+
+    public static String convertShanToEngNumberAsString(String shanNumber) {
+        StringBuilder output = new StringBuilder();
+        for (char ch: shanNumber.toCharArray()) {
+            output.append(ch - '႐');
+        }
+        return output.toString();
+    }
+
+    public static int convertShanToEngNumberAsInt(String shanNumber) {
+        String output = convertShanToEngNumberAsString(shanNumber);
+        return Integer.parseInt(output);
+    }
+
+    public static boolean isShanNumber(String param) {
+        var numbers = param.split("");
+        for (var num : numbers) {
+            if (List.of(NUMBERS).contains(num)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isShanConsonant(String param) {
+        var text = param.split("");
+        for (var txt : text) {
+            if (List.of(CONSONANTS).contains(txt)) continue;
+            return false;
+        }
+        return true;
     }
 
 }
