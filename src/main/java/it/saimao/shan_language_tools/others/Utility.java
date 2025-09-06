@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  *
  *
  */
-public class Utility {
+public final class Utility {
     public static final String[] CONSONANTS = {
             "ၵ", "ၶ", "င", "ၸ", "သ", "ၺ",
             "တ", "ထ", "ၼ", "ပ", "ၽ", "ၾ",
