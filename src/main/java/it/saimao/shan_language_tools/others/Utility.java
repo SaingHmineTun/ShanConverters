@@ -1,6 +1,9 @@
 package it.saimao.shan_language_tools.others;
 
-import java.util.List;
+import it.saimao.shan_language_tools.breakers.ShanRuleBasedSyllableSegmentation;
+
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -9,7 +12,7 @@ import java.util.stream.Stream;
  *
  *
  */
-public class ShanSyllables {
+public class Utility {
     public static final String[] CONSONANTS = {
             "ၵ", "ၶ", "င", "ၸ", "သ", "ၺ",
             "တ", "ထ", "ၼ", "ပ", "ၽ", "ၾ",
@@ -209,5 +212,41 @@ public class ShanSyllables {
         }
         return true;
     }
+
+    public static Map<String, Integer> countShanWords(String word) {
+        return Arrays.stream(ShanRuleBasedSyllableSegmentation.segmentAsArray(word))
+                .collect(Collectors.groupingBy(
+                        s -> s,                       // group by syllable
+                        Collectors.summingInt(w -> 1) // count occurrences
+                ))
+                .entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (a, b) -> a,
+                        LinkedHashMap::new
+                ));
+    }
+
+    public static Map<String, Queue<Integer>> getShanWordsIndex(String input) {
+        var map = new HashMap<String, Queue<Integer>>();
+
+        var syl = ShanRuleBasedSyllableSegmentation.segmentAsArray(input);
+        for (int i = 0; i < syl.length; i++) {
+            if (!map.containsKey(syl[i])) {
+                map.put(syl[i], new LinkedList<>());
+            }
+            map.get(syl[i]).add(i);
+        }
+        return map;
+    }
+
+    public static String shuffleWord(String word) {
+        List<String> syllables = new ArrayList<>(List.of(ShanRuleBasedSyllableSegmentation.segmentAsArray(word)));
+        Collections.shuffle(syllables);
+        return String.join("", syllables);
+    }
+
 
 }
